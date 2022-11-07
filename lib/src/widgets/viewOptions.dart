@@ -1,4 +1,5 @@
 // ignore_for_file: file_names
+
 import 'package:flutter/material.dart'
     show
         AppBar,
@@ -24,6 +25,7 @@ import 'package:flutter/material.dart'
         State,
         StatefulWidget,
         Text,
+        TextStyle,
         Widget;
 
 // ignore: camel_case_types
@@ -56,7 +58,10 @@ class _main_viewState extends State<viewoptions> {
                   Expanded(
                     child: Image.asset('assets/images/perfil2.png'),
                   ),
-                  const Text("gaby gomez"),
+                  const Text(
+                    "gaby gomez",
+                    style: TextStyle(fontSize: 17, color: Color(0xffe4f2fb)),
+                  ),
                   // ignore: prefer_const_constructors
                   SizedBox(
                     height: 30.0,
@@ -67,33 +72,59 @@ class _main_viewState extends State<viewoptions> {
             ListTile(
               tileColor: const Color(0xff29859a),
               selectedTileColor: const Color(0xf305718D),
-              leading: Icon(Icons.home),
-              title: Text("Inicio"),
-              textColor: Color(0xffe4f2fb),
+              leading: const Icon(
+                Icons.home,
+                color: Color(0xffe4f2fb),
+              ),
+              title: const Text(
+                "Inicio",
+                style: TextStyle(fontSize: 17),
+              ),
+              textColor: const Color(0xffe4f2fb),
               onTap: () {},
             ),
             ListTile(
               tileColor: const Color(0xff29859a),
               selectedTileColor: const Color(0xf305718D),
-              leading: Icon(Icons.soap_outlined),
-              title: Text("Solicitud"),
-              textColor: Color(0xffe4f2fb),
+              leading: const Icon(
+                Icons.soap_outlined,
+                color: Color(0xffe4f2fb),
+              ),
+              title: const Text(
+                "Solicitud",
+                style: TextStyle(fontSize: 17),
+              ),
+              textColor: const Color(0xffe4f2fb),
               onTap: () {},
             ),
             ListTile(
               tileColor: const Color(0xff29859a),
               selectedTileColor: const Color(0xf305718D),
-              leading: Icon(Icons.military_tech_sharp),
-              title: Text("Miembros"),
-              textColor: Color(0xffe4f2fb),
+              leading: const Icon(
+                Icons.military_tech_sharp,
+                color: Color(0xffe4f2fb),
+              ),
+              // ignore: prefer_const_constructors
+              title: Text(
+                "Miembros",
+                style: const TextStyle(fontSize: 17),
+              ),
+              textColor: const Color(0xffe4f2fb),
               onTap: () {},
             ),
             ListTile(
               tileColor: const Color(0xff29859a),
               selectedTileColor: const Color(0xf305718D),
-              leading: Icon(Icons.manage_accounts),
-              title: Text("Configuraciones"),
-              textColor: Color(0xffe4f2fb),
+              leading: const Icon(
+                Icons.manage_accounts,
+                color: Color(0xffe4f2fb),
+              ),
+              // ignore: prefer_const_constructors
+              title: Text(
+                "Configuraciones",
+                style: const TextStyle(fontSize: 17),
+              ),
+              textColor: const Color(0xffe4f2fb),
               onTap: () {},
             ),
           ],
