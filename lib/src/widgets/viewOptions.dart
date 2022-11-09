@@ -1,32 +1,7 @@
 // ignore_for_file: file_names
-
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart'
-    show
-        AppBar,
-        BottomNavigationBar,
-        BottomNavigationBarItem,
-        BottomNavigationBarType,
-        BoxDecoration,
-        BuildContext,
-        Center,
-        Color,
-        Column,
-        Drawer,
-        DrawerHeader,
-        EdgeInsets,
-        Expanded,
-        Icon,
-        Icons,
-        Image,
-        ListTile,
-        ListView,
-        Scaffold,
-        SizedBox,
-        State,
-        StatefulWidget,
-        Text,
-        TextStyle,
-        Widget;
+    show AppBar,  BottomNavigationBar, BottomNavigationBarItem, BottomNavigationBarType, BoxDecoration, BuildContext, Center, Color, Colors, Drawer,  DrawerHeader, Expanded, FloatingActionButton, Icon, Icons, Image, ListTile, ListView,  Navigator, Row, Scaffold, State, StatefulWidget, Text, TextStyle, Widget;
 
 // ignore: camel_case_types
 class viewoptions extends StatefulWidget {
@@ -49,24 +24,28 @@ class _main_viewState extends State<viewoptions> {
       drawer: Drawer(
         backgroundColor: const Color(0xff29859a),
         child: ListView(
-          padding: EdgeInsets.zero,
           children: [
-            DrawerHeader(
-              decoration: const BoxDecoration(color: Color(0xff127990)),
-              child: Column(
-                children: [
-                  Expanded(
-                    child: Image.asset('assets/images/perfil2.png'),
-                  ),
-                  const Text(
-                    "gaby gomez",
-                    style: TextStyle(fontSize: 17, color: Color(0xffe4f2fb)),
-                  ),
-                  // ignore: prefer_const_constructors
-                  SizedBox(
-                    height: 30.0,
-                  ),
-                ],
+            Container(
+              height: 270,
+              color: const Color(0xff127990),
+              child: DrawerHeader(
+                decoration: const BoxDecoration(color: Color(0xff127990)),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Image.asset(
+                        'assets/images/perfil2.png',
+                        height: 110,
+                      ),
+                    ),
+
+                    const Text(
+                      "gaby gomez",
+                      style: TextStyle(fontSize: 17, color: Color(0xffe4f2fb)),
+                    ),
+                    // ignore: prefer_const_constructors
+                  ],
+                ),
               ),
             ),
             ListTile(
@@ -81,7 +60,9 @@ class _main_viewState extends State<viewoptions> {
                 style: TextStyle(fontSize: 17),
               ),
               textColor: const Color(0xffe4f2fb),
-              onTap: () {},
+              onTap: () {
+                Navigator.pop(context);
+              },
             ),
             ListTile(
               tileColor: const Color(0xff29859a),
@@ -95,7 +76,9 @@ class _main_viewState extends State<viewoptions> {
                 style: TextStyle(fontSize: 17),
               ),
               textColor: const Color(0xffe4f2fb),
-              onTap: () {},
+              onTap: () {
+                Navigator.pop(context);
+              },
             ),
             ListTile(
               tileColor: const Color(0xff29859a),
@@ -110,7 +93,9 @@ class _main_viewState extends State<viewoptions> {
                 style: const TextStyle(fontSize: 17),
               ),
               textColor: const Color(0xffe4f2fb),
-              onTap: () {},
+              onTap: () {
+                Navigator.pop(context);
+              },
             ),
             ListTile(
               tileColor: const Color(0xff29859a),
@@ -125,7 +110,9 @@ class _main_viewState extends State<viewoptions> {
                 style: const TextStyle(fontSize: 17),
               ),
               textColor: const Color(0xffe4f2fb),
-              onTap: () {},
+              onTap: () {
+                Navigator.pop(context);
+              },
             ),
           ],
         ),
