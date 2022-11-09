@@ -21,7 +21,7 @@ class Viewregister extends StatelessWidget {
               children: [
                 //Padding(padding: EdgeInsets.symmetric(horizontal: 50)),
                 IconButton(
-                  icon: Icon(Icons.arrow_back_ios_new, size: 70),
+                  icon: Icon(Icons.arrow_back_ios_new, size: 50),
                   color: Colors.white,
                   alignment: Alignment.topLeft,
                   onPressed: () {
@@ -31,7 +31,7 @@ class Viewregister extends StatelessWidget {
                 ),
                 Image.asset(
                   'assets/images/logo.png',
-                  height: 150,
+                  height: 145,
                   alignment: Alignment.topRight,
                 )
               ],
