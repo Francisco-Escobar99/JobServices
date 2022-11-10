@@ -1,4 +1,5 @@
-import 'dart:ui';
+// ignore_for_file: file_names, camel_case_types
+
 import 'package:flutter/material.dart';
 import 'package:from_end/src/pages/pageOptions.dart';
 import 'package:from_end/src/pages/pageHome.dart';
@@ -9,7 +10,7 @@ class view_login extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: double.infinity,
       width: double.infinity,
       child: CustomPaint(
@@ -22,12 +23,12 @@ class view_login extends StatelessWidget {
               children: [
                 //Padding(padding: EdgeInsets.symmetric(horizontal: 50)),
                 IconButton(
-                  icon: Icon(Icons.arrow_back_ios_new, size: 50),
+                  icon: const Icon(Icons.arrow_back_ios_new, size: 50),
                   color: Colors.white,
                   alignment: Alignment.topLeft,
                   onPressed: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Headerpage()));
+                        MaterialPageRoute(builder: (context) => const Headerpage()));
                   },
                 ),
                 Image.asset(
@@ -65,18 +66,18 @@ class view_login extends StatelessWidget {
               ),
             ),
             TextButton(
-              child: Text(
+              style: const ButtonStyle(alignment: Alignment(0.7, 0.7)),
+              onPressed: () {
+                Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const passwordPage()));
+              },
+              child: const Text(
                 "¿Olvidaste tu Contraseña?",
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 18,
                     color: Color(0xff4495a6)),
               ),
-              style: ButtonStyle(alignment: Alignment(0.7, 0.7)),
-              onPressed: () {
-                Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => passwordPage()));
-              },
             ),
             Container(
               padding: const EdgeInsets.only(
@@ -85,25 +86,25 @@ class view_login extends StatelessWidget {
                 top: 50,
               ),
               child: ElevatedButton(
-                child: Text('Iniciar Sesion',
-                    style:
-                        TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => optionPage()));
+                      MaterialPageRoute(builder: (context) => const optionPage()));
                 },
                 style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all(Colors.white),
                     padding:
                         MaterialStateProperty.all(const EdgeInsets.all(15)),
                     foregroundColor:
-                        MaterialStateProperty.all(Color(0xff208097)),
+                        MaterialStateProperty.all(const Color(0xff208097)),
                     side: MaterialStateProperty.all(const BorderSide(
                       color: Color(0xff056980),
                       width: 2,
                     )),
                     shape: MaterialStateProperty.all(RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(21)))),
+                child: const Text('Iniciar Sesion',
+                    style:
+                        TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
               ),
             ),
             Container(
@@ -113,22 +114,22 @@ class view_login extends StatelessWidget {
                 top: 40,
               ),
               child: ElevatedButton(
-                child: Text('Iniciar Sesion con Gmail',
-                    style:
-                        TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
                 onPressed: () {},
                 style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all(Colors.white),
                     padding:
                         MaterialStateProperty.all(const EdgeInsets.all(15)),
                     foregroundColor:
-                        MaterialStateProperty.all(Color(0xff208097)),
+                        MaterialStateProperty.all(const Color(0xff208097)),
                     side: MaterialStateProperty.all(const BorderSide(
                       color: Color(0xff056980),
                       width: 2,
                     )),
                     shape: MaterialStateProperty.all(RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(21)))),
+                child: const Text('Iniciar Sesion con Gmail',
+                    style:
+                        TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
               ),
             )
           ],
@@ -141,14 +142,14 @@ class view_login extends StatelessWidget {
 class _BackgroundLogin extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
-    final paint = new Paint();
+    final paint = Paint();
 
     //propiedades
-    paint.color = Color(0xff04738b);
+    paint.color = const Color(0xff04738b);
     paint.style = PaintingStyle.fill;
     paint.strokeWidth = 20;
 
-    final path = new Path();
+    final path = Path();
     path.lineTo(0, size.height * 0.25); // 30
     path.quadraticBezierTo(
         size.width * 0.23,

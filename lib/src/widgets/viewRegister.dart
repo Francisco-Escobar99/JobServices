@@ -1,6 +1,6 @@
-import 'dart:ui';
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
-import 'package:from_end/src/pages/pageRegister.dart';
 import 'package:from_end/src/pages/pageHome.dart';
 
 class Viewregister extends StatelessWidget {
@@ -8,7 +8,7 @@ class Viewregister extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: double.infinity,
       width: double.infinity,
       child: CustomPaint(
@@ -21,12 +21,12 @@ class Viewregister extends StatelessWidget {
               children: [
                 //Padding(padding: EdgeInsets.symmetric(horizontal: 50)),
                 IconButton(
-                  icon: Icon(Icons.arrow_back_ios_new, size: 50),
+                  icon: const Icon(Icons.arrow_back_ios_new, size: 50),
                   color: Colors.white,
                   alignment: Alignment.topLeft,
                   onPressed: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Headerpage()));
+                        MaterialPageRoute(builder: (context) => const Headerpage()));
                   },
                 ),
                 Image.asset(
@@ -73,32 +73,32 @@ class Viewregister extends StatelessWidget {
             Container(
                 padding: const EdgeInsets.only(right: 30, left: 30, top: 40),
                 child: ElevatedButton(
-                  child: Text('Registrarme'),
                   onPressed: () {},
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(Colors.white),
                       foregroundColor:
-                          MaterialStateProperty.all(Color(0xff208097)),
+                          MaterialStateProperty.all(const Color(0xff208097)),
                       side: MaterialStateProperty.all(const BorderSide(
                         color: Color(0xff056980),
                         width: 2,
                       )),
                       shape: MaterialStateProperty.all(RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)))),
+                  child: const Text('Registrarme'),
                 )),
             Container(
                 padding: const EdgeInsets.only(right: 30, left: 30, top: 10),
                 child: ElevatedButton(
-                  child: Text('Registrarme con Gmail'),
                   onPressed: () {},
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(Colors.white),
                       foregroundColor:
-                          MaterialStateProperty.all(Color(0xff208097)),
+                          MaterialStateProperty.all(const Color(0xff208097)),
                       side: MaterialStateProperty.all(
                           const BorderSide(color: Color(0xff056980), width: 2)),
                       shape: MaterialStateProperty.all(RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)))),
+                  child: const Text('Registrarme con Gmail'),
                 ))
           ],
         ),
@@ -110,14 +110,14 @@ class Viewregister extends StatelessWidget {
 class _BackgroundDesign extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
-    final paint = new Paint();
+    final paint = Paint();
 
     //propiedades
-    paint.color = Color(0xff04738b);
+    paint.color = const Color(0xff04738b);
     paint.style = PaintingStyle.fill;
     paint.strokeWidth = 20;
 
-    final path = new Path();
+    final path = Path();
 
     path.lineTo(0, size.height * 0.25); // 30
     path.quadraticBezierTo(

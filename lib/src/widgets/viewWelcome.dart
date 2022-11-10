@@ -1,4 +1,5 @@
-import 'dart:ui';
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:from_end/src/pages/pageLogin.dart';
 import 'package:from_end/src/pages/pageRegister.dart';
@@ -8,16 +9,16 @@ class ViewHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
         height: double.infinity,
         width: double.infinity,
         child: CustomPaint(
           painter: _BackgroundDesign(),
           child: ListView(
             children: [
-              Container(
-                child: Image.asset('assets/images/logo.png'),
+              SizedBox(
                 height: 350,
+                child: Image.asset('assets/images/logo.png'),
               ),
               Container(
                 padding: const EdgeInsets.only(
@@ -26,18 +27,18 @@ class ViewHome extends StatelessWidget {
                   top: 80,
                 ),
                 child: ElevatedButton.icon(
-                  label: Text('Iniciar Sesion', style: TextStyle(fontSize: 20)),
+                  label: const Text('Iniciar Sesion', style: TextStyle(fontSize: 20)),
                   onPressed: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => loginPage()));
+                        MaterialPageRoute(builder: (context) => const loginPage()));
                   },
-                  icon: Icon(Icons.arrow_forward_ios),
+                  icon: const Icon(Icons.arrow_forward_ios),
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(Colors.white),
                       padding:
                           MaterialStateProperty.all(const EdgeInsets.all(17)),
                       foregroundColor:
-                          MaterialStateProperty.all(Color(0xff208097)),
+                          MaterialStateProperty.all(const Color(0xff208097)),
                       side: MaterialStateProperty.all(const BorderSide(
                         color: Color(0xff056980),
                         width: 2,
@@ -53,20 +54,20 @@ class ViewHome extends StatelessWidget {
                   top: 40,
                 ),
                 child: ElevatedButton.icon(
-                  label: Text('Registrarme', style: TextStyle(fontSize: 20)),
+                  label: const Text('Registrarme', style: TextStyle(fontSize: 20)),
                   onPressed: () {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => registerPage()));
+                            builder: (context) => const registerPage()));
                   },
-                  icon: Icon(Icons.arrow_forward_ios),
+                  icon: const Icon(Icons.arrow_forward_ios),
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(Colors.white),
                       padding:
                           MaterialStateProperty.all(const EdgeInsets.all(17)),
                       foregroundColor:
-                          MaterialStateProperty.all(Color(0xff208097)),
+                          MaterialStateProperty.all(const Color(0xff208097)),
                       side: MaterialStateProperty.all(const BorderSide(
                         color: Color(0xff056980),
                         width: 2,
@@ -84,14 +85,14 @@ class ViewHome extends StatelessWidget {
 class _BackgroundDesign extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
-    final paint = new Paint();
+    final paint = Paint();
 
     //propiedades
-    paint.color = Color(0xff04738b);
+    paint.color = const Color(0xff04738b);
     paint.style = PaintingStyle.fill;
     paint.strokeWidth = 20;
 
-    final path = new Path();
+    final path = Path();
     path.lineTo(0, size.height * 0.55);
     path.quadraticBezierTo(size.width * 0.24, size.height * 0.51,
         size.width / 2, size.height * 0.56);

@@ -1,4 +1,5 @@
-import 'dart:ui';
+// ignore_for_file: file_names, camel_case_types
+
 import 'package:flutter/material.dart';
 import 'package:from_end/src/pages/pageLogin.dart';
 
@@ -7,7 +8,7 @@ class Password_view extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: double.infinity,
       width: double.infinity,
       child: CustomPaint(
@@ -20,12 +21,12 @@ class Password_view extends StatelessWidget {
               children: [
                 //Padding(padding: EdgeInsets.symmetric(horizontal: 50)),
                 IconButton(
-                  icon: Icon(Icons.arrow_back_ios_new, size: 50),
+                  icon: const Icon(Icons.arrow_back_ios_new, size: 50),
                   color: Colors.white,
                   alignment: Alignment.topLeft,
                   onPressed: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => loginPage()));
+                        MaterialPageRoute(builder: (context) => const loginPage()));
                   },
                 ),
                 Image.asset(
@@ -51,10 +52,10 @@ class Password_view extends StatelessWidget {
                   top: 0, bottom: 30, right: 30, left: 30),
               // ignore: prefer_const_constructors
               //Padding(padding: EdgeInsets.symmetric(horizontal: 50)),
-              child: Text(
+              child: const Text(
                 'Ingresa su correo electrico, te enviaremos las instrucciones para iniciar sesion',
                 textAlign: TextAlign.center,
-                style: const TextStyle(fontSize: 17, color: Color(0xff569fb0)),
+                style: TextStyle(fontSize: 17, color: Color(0xff569fb0)),
               ),
             ),
             Container(
@@ -74,22 +75,22 @@ class Password_view extends StatelessWidget {
                 top: 70,
               ),
               child: ElevatedButton(
-                child: Text('Enviar',
-                    style:
-                        TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
                 onPressed: () {},
                 style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all(Colors.white),
                     padding:
                         MaterialStateProperty.all(const EdgeInsets.all(15)),
                     foregroundColor:
-                        MaterialStateProperty.all(Color(0xff208097)),
+                        MaterialStateProperty.all(const Color(0xff208097)),
                     side: MaterialStateProperty.all(const BorderSide(
                       color: Color(0xff056980),
                       width: 2,
                     )),
                     shape: MaterialStateProperty.all(RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(21)))),
+                child: const Text('Enviar',
+                    style:
+                        TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
               ),
             )
           ],
@@ -102,14 +103,14 @@ class Password_view extends StatelessWidget {
 class _BackgroundPassword extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
-    final paint = new Paint();
+    final paint = Paint();
 
     //propiedades
-    paint.color = Color(0xff04738b);
+    paint.color = const Color(0xff04738b);
     paint.style = PaintingStyle.fill;
     paint.strokeWidth = 20;
 
-    final path = new Path();
+    final path = Path();
     path.lineTo(0, size.height * 0.25); // 30
     path.quadraticBezierTo(
         size.width * 0.23,

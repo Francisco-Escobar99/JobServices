@@ -1,7 +1,33 @@
 // ignore_for_file: file_names
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart'
-    show AppBar,  BottomNavigationBar, BottomNavigationBarItem, BottomNavigationBarType, BoxDecoration, BuildContext, Center, Color, Colors, Drawer,  DrawerHeader, Expanded, FloatingActionButton, Icon, Icons, Image, ListTile, ListView,  Navigator, Row, Scaffold, State, StatefulWidget, Text, TextStyle, Widget;
+    show
+        AppBar,
+        BottomNavigationBar,
+        BottomNavigationBarItem,
+        BottomNavigationBarType,
+        BoxDecoration,
+        BuildContext,
+        Center,
+        Color,
+        Drawer,
+        DrawerHeader,
+        Expanded,
+        Icon,
+        Icons,
+        Image,
+        ListTile,
+        ListView,
+        MaterialPageRoute,
+        Navigator,
+        Row,
+        Scaffold,
+        State,
+        StatefulWidget,
+        Text,
+        TextStyle,
+        Widget;
+import 'package:from_end/src/widgets/viewWelcome.dart';
 
 // ignore: camel_case_types
 class viewoptions extends StatefulWidget {
@@ -114,6 +140,29 @@ class _main_viewState extends State<viewoptions> {
                 Navigator.pop(context);
               },
             ),
+            Container(
+              padding: const EdgeInsets.only(top: 275),
+              child: ListTile(
+                tileColor: const Color(0xff29859a),
+                selectedTileColor: const Color(0xf305718D),
+                leading: const Icon(
+                  Icons.exit_to_app,
+                  color: Color(0xffe4f2fb),
+                ),
+                // ignore: prefer_const_constructors
+                title: Text(
+                  "cerrar seccion",
+                  style: const TextStyle(fontSize: 17),
+                ),
+                textColor: const Color(0xffe4f2fb),
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const ViewHome()));
+                },
+              ),
+            )
           ],
         ),
       ),
