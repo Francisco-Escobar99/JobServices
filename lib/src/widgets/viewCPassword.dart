@@ -1,11 +1,7 @@
-// ignore_for_file: file_names, camel_case_types
-
 import 'package:flutter/material.dart';
-import 'package:from_end/src/pages/pageLogin.dart';
-import 'package:from_end/src/pages/pageCPassword.dart';
 
-class Password_view extends StatelessWidget {
-  const Password_view({Key? key}) : super(key: key);
+class ChangePassword_view extends StatelessWidget {
+  const ChangePassword_view({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,21 +13,9 @@ class Password_view extends StatelessWidget {
         child: ListView(
           children: [
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               //crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                //Padding(padding: EdgeInsets.symmetric(horizontal: 50)),
-                IconButton(
-                  icon: const Icon(Icons.arrow_back_ios_new, size: 50),
-                  color: Colors.white,
-                  alignment: Alignment.topLeft,
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const loginPage()));
-                  },
-                ),
+                Padding(padding: EdgeInsets.symmetric(horizontal: 130)),
                 Image.asset(
                   'assets/images/logo.png',
                   height: 145,
@@ -41,34 +25,36 @@ class Password_view extends StatelessWidget {
             ),
             Container(
               padding: const EdgeInsets.only(
-                  top: 70, bottom: 40, right: 30, left: 30),
+                  top: 60, bottom: 40, right: 30, left: 30),
               // ignore: prefer_const_constructors
-              child: Text('¿Olvidaste tu contraseña?',
-                  textAlign: TextAlign.center,
+              child: Text('Ingresa tu Nueva Contraseña',
+                  textAlign: TextAlign.left,
                   style: const TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 23,
+                      fontSize: 28,
                       color: Color(0xff06708d))),
-            ),
-            Container(
-              padding: const EdgeInsets.only(
-                  top: 0, bottom: 30, right: 30, left: 30),
-              // ignore: prefer_const_constructors
-              //Padding(padding: EdgeInsets.symmetric(horizontal: 50)),
-              child: const Text(
-                'Ingresa su correo electrico, te enviaremos las instrucciones para iniciar sesion',
-                textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 17, color: Color(0xff569fb0)),
-              ),
             ),
             Container(
               padding: const EdgeInsets.only(top: 10, right: 30, left: 30),
               child: TextFormField(
                 decoration: const InputDecoration(
-                    hintText: 'Correo electronico',
-                    prefixIcon: Icon(
-                      Icons.email,
-                    )),
+                  prefixIcon: Icon(
+                    Icons.email,
+                  ),
+                  hintText: 'Contraseña',
+                ),
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.only(top: 30, right: 30, left: 30),
+              child: TextFormField(
+                // ignore: prefer_const_constructors
+                decoration: InputDecoration(
+                  prefixIcon: Icon(
+                    Icons.email,
+                  ),
+                  hintText: 'Confirmar Contraseña',
+                ),
               ),
             ),
             Container(
@@ -78,12 +64,7 @@ class Password_view extends StatelessWidget {
                 top: 70,
               ),
               child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const CpasswordPage()));
-                },
+                onPressed: () {},
                 style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all(Colors.white),
                     padding:
@@ -96,7 +77,7 @@ class Password_view extends StatelessWidget {
                     )),
                     shape: MaterialStateProperty.all(RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(21)))),
-                child: const Text('Enviar',
+                child: const Text('Confirmar',
                     style:
                         TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
               ),

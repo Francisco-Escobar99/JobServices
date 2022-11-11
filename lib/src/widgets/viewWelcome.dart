@@ -12,7 +12,8 @@ class ViewHome extends StatelessWidget {
     return SizedBox(
         height: double.infinity,
         width: double.infinity,
-        child: CustomPaint(
+        child: Card(
+            child: CustomPaint(
           painter: _BackgroundDesign(),
           child: ListView(
             children: [
@@ -27,10 +28,13 @@ class ViewHome extends StatelessWidget {
                   top: 80,
                 ),
                 child: ElevatedButton.icon(
-                  label: const Text('Iniciar Sesion', style: TextStyle(fontSize: 20)),
+                  label: const Text('Iniciar Sesion',
+                      style: TextStyle(fontSize: 20)),
                   onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => const loginPage()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const loginPage()));
                   },
                   icon: const Icon(Icons.arrow_forward_ios),
                   style: ButtonStyle(
@@ -54,7 +58,8 @@ class ViewHome extends StatelessWidget {
                   top: 40,
                 ),
                 child: ElevatedButton.icon(
-                  label: const Text('Registrarme', style: TextStyle(fontSize: 20)),
+                  label:
+                      const Text('Registrarme', style: TextStyle(fontSize: 20)),
                   onPressed: () {
                     Navigator.push(
                         context,
@@ -78,7 +83,7 @@ class ViewHome extends StatelessWidget {
               )
             ],
           ),
-        ));
+        )));
   }
 }
 
