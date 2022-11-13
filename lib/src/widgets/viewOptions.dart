@@ -1,32 +1,7 @@
 // ignore_for_file: file_names
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart'
-    show
-        AppBar,
-        BottomNavigationBar,
-        BottomNavigationBarItem,
-        BottomNavigationBarType,
-        BoxDecoration,
-        BuildContext,
-        Center,
-        Color,
-        Drawer,
-        DrawerHeader,
-        Expanded,
-        Icon,
-        Icons,
-        Image,
-        ListTile,
-        ListView,
-        MaterialPageRoute,
-        Navigator,
-        Row,
-        Scaffold,
-        State,
-        StatefulWidget,
-        Text,
-        TextStyle,
-        Widget;
+    show AppBar, BottomNavigationBar, BottomNavigationBarItem, BottomNavigationBarType, BoxDecoration, BuildContext, Center, Color, Drawer, DrawerHeader, Expanded, Icon, Icons, Image, ListTile, ListView, MaterialPageRoute, Navigator, Row, Scaffold, State, StatefulWidget, Text, TextStyle, Widget;
 import 'package:from_end/src/widgets/viewWelcome.dart';
 
 // ignore: camel_case_types
@@ -188,9 +163,16 @@ class _main_viewState extends State<viewoptions> {
           onTap: (index) => setState(() {
                 _index = index;
               }),
-          items: const [
+          items:  const [
+            
+             BottomNavigationBarItem(
+                icon: ImageIcon(
+                  AssetImage('assets/images/logo.png',),
+                  
+                  
+                  ), label: "Menu"),
             BottomNavigationBarItem(
-                icon: Icon(Icons.messenger_outline_sharp), label: "Mensajes"),
+                icon: Icon(Icons.messenger_outline_sharp,), label: "Mensajes"),
             BottomNavigationBarItem(
                 icon: Icon(Icons.add_box_outlined), label: "Agregar"),
             BottomNavigationBarItem(
