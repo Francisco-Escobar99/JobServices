@@ -42,6 +42,12 @@ class _main_viewState extends State<viewoptions> {
   int _index = 0;
   @override
   Widget build(BuildContext context) {
+    Size dato = MediaQuery.of(context).size;
+    var space = dato.height / 3.1;
+  
+
+    // ignore: avoid_print
+    print(space);
     // ignore: prefer_const_literals_to_create_immutables, dead_code
     return Scaffold(
       appBar: AppBar(
@@ -53,9 +59,14 @@ class _main_viewState extends State<viewoptions> {
           children: [
             Container(
               height: 270,
-              color: const Color(0xff127990),
+              decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                colors: [Color(0xff127791), Color(0xff28849B)],
+                stops: [0.5, 0.5],
+                begin: FractionalOffset.topCenter,
+                end: FractionalOffset.bottomCenter,
+              )),
               child: DrawerHeader(
-                decoration: const BoxDecoration(color: Color(0xff127990)),
                 child: Row(
                   children: [
                     Expanded(
@@ -141,7 +152,7 @@ class _main_viewState extends State<viewoptions> {
               },
             ),
             Container(
-              padding: const EdgeInsets.only(top: 275),
+              padding:  EdgeInsets.only(top: space),
               child: ListTile(
                 tileColor: const Color(0xff29859a),
                 selectedTileColor: const Color(0xf305718D),

@@ -1,4 +1,4 @@
-package com.example.from_end
+package com.jobservices.from_end
 
 import io.flutter.embedding.android.FlutterActivity
 

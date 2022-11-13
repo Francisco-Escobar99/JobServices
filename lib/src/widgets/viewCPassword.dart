@@ -1,3 +1,5 @@
+// ignore_for_file: file_names, camel_case_types
+
 import 'package:flutter/material.dart';
 
 class ChangePassword_view extends StatelessWidget {
@@ -15,7 +17,7 @@ class ChangePassword_view extends StatelessWidget {
             Row(
               //crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Padding(padding: EdgeInsets.symmetric(horizontal: 130)),
+                const Padding(padding: EdgeInsets.symmetric(horizontal: 130)),
                 Image.asset(
                   'assets/images/logo.png',
                   height: 145,
@@ -50,7 +52,7 @@ class ChangePassword_view extends StatelessWidget {
               child: TextFormField(
                 // ignore: prefer_const_constructors
                 decoration: InputDecoration(
-                  prefixIcon: Icon(
+                  prefixIcon: const Icon(
                     Icons.email,
                   ),
                   hintText: 'Confirmar Contraseña',
