@@ -1,32 +1,7 @@
 // ignore_for_file: file_names
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart'
-    show
-        AppBar,
-        BottomNavigationBar,
-        BottomNavigationBarItem,
-        BottomNavigationBarType,
-        BoxDecoration,
-        BuildContext,
-        Center,
-        Color,
-        Drawer,
-        DrawerHeader,
-        Expanded,
-        Icon,
-        Icons,
-        Image,
-        ListTile,
-        ListView,
-        MaterialPageRoute,
-        Navigator,
-        Row,
-        Scaffold,
-        State,
-        StatefulWidget,
-        Text,
-        TextStyle,
-        Widget;
+    show AppBar, BottomNavigationBar, BottomNavigationBarItem, BottomNavigationBarType, BoxDecoration, BuildContext, Center, Color, Drawer, DrawerHeader, Expanded, Icon, Icons, Image, ListTile, ListView, MaterialPageRoute, Navigator, Row, Scaffold, State, StatefulWidget, Text, TextStyle, Widget;
 import 'package:from_end/src/widgets/viewWelcome.dart';
 
 // ignore: camel_case_types
@@ -42,6 +17,12 @@ class _main_viewState extends State<viewoptions> {
   int _index = 0;
   @override
   Widget build(BuildContext context) {
+    Size dato = MediaQuery.of(context).size;
+    var space = dato.height / 2;
+  
+
+    // ignore: avoid_print
+    print(space);
     // ignore: prefer_const_literals_to_create_immutables, dead_code
     return Scaffold(
       appBar: AppBar(
@@ -53,9 +34,14 @@ class _main_viewState extends State<viewoptions> {
           children: [
             Container(
               height: 270,
-              color: const Color(0xff127990),
+              decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                colors: [Color(0xff127791), Color(0xff28849B)],
+                stops: [0.5, 0.5],
+                begin: FractionalOffset.topCenter,
+                end: FractionalOffset.bottomCenter,
+              )),
               child: DrawerHeader(
-                decoration: const BoxDecoration(color: Color(0xff127990)),
                 child: Row(
                   children: [
                     Expanded(
@@ -141,17 +127,17 @@ class _main_viewState extends State<viewoptions> {
               },
             ),
             Container(
-              padding: const EdgeInsets.only(top: 275),
+              height: space,
+              alignment: Alignment.bottomLeft,
+              color: const Color(0xff29859a),
               child: ListTile(
-                tileColor: const Color(0xff29859a),
+                tileColor: const Color.fromARGB(255, 0, 0, 0),
                 selectedTileColor: const Color(0xf305718D),
-                leading: const Icon(
-                  Icons.exit_to_app,
-                  color: Color(0xffe4f2fb),
-                ),
+                
                 // ignore: prefer_const_constructors
                 title: Text(
                   "cerrar seccion",
+                  textAlign: TextAlign.right,
                   style: const TextStyle(fontSize: 17),
                 ),
                 textColor: const Color(0xffe4f2fb),
@@ -164,6 +150,7 @@ class _main_viewState extends State<viewoptions> {
               ),
             )
           ],
+          
         ),
       ),
       body: const Center(
@@ -177,9 +164,16 @@ class _main_viewState extends State<viewoptions> {
           onTap: (index) => setState(() {
                 _index = index;
               }),
-          items: const [
+          items:  const [
+            
+             BottomNavigationBarItem(
+                icon: ImageIcon(
+                  AssetImage('assets/images/logo.png',),
+                  
+                  
+                  ), label: "Menu"),
             BottomNavigationBarItem(
-                icon: Icon(Icons.messenger_outline_sharp), label: "Mensajes"),
+                icon: Icon(Icons.messenger_outline_sharp,), label: "Mensajes"),
             BottomNavigationBarItem(
                 icon: Icon(Icons.add_box_outlined), label: "Agregar"),
             BottomNavigationBarItem(

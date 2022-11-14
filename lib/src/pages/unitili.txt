@@ -1,0 +1,7 @@
+keytool -genkey -v -keystore key\key.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias job450
+
+
+
+alias:job450
+
+ss:123456012
