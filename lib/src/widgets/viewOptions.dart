@@ -18,7 +18,7 @@ class _main_viewState extends State<viewoptions> {
   @override
   Widget build(BuildContext context) {
     Size dato = MediaQuery.of(context).size;
-    var space = dato.height / 3.1;
+    var space = dato.height / 2;
   
 
     // ignore: avoid_print
@@ -127,17 +127,17 @@ class _main_viewState extends State<viewoptions> {
               },
             ),
             Container(
-              padding:  EdgeInsets.only(top: space),
+              height: space,
+              alignment: Alignment.bottomLeft,
+              color: const Color(0xff29859a),
               child: ListTile(
-                tileColor: const Color(0xff29859a),
+                tileColor: const Color.fromARGB(255, 0, 0, 0),
                 selectedTileColor: const Color(0xf305718D),
-                leading: const Icon(
-                  Icons.exit_to_app,
-                  color: Color(0xffe4f2fb),
-                ),
+                
                 // ignore: prefer_const_constructors
                 title: Text(
                   "cerrar seccion",
+                  textAlign: TextAlign.right,
                   style: const TextStyle(fontSize: 17),
                 ),
                 textColor: const Color(0xffe4f2fb),
@@ -150,6 +150,7 @@ class _main_viewState extends State<viewoptions> {
               ),
             )
           ],
+          
         ),
       ),
       body: const Center(
