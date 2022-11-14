@@ -63,6 +63,7 @@ class view_login extends StatelessWidget {
               child: TextFormField(
                 decoration: const InputDecoration(
                     hintText: 'Contraseña', prefixIcon: Icon(Icons.lock_reset)),
+                    obscureText: true,
               ),
             ),
             TextButton(

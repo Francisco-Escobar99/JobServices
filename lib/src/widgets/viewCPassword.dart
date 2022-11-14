@@ -39,10 +39,11 @@ class ChangePassword_view extends StatelessWidget {
               child: TextFormField(
                 decoration: const InputDecoration(
                   prefixIcon: Icon(
-                    Icons.email,
+                    Icons.lock_reset,
                   ),
                   hintText: 'Contraseña',
                 ),
+                obscureText: true,
               ),
             ),
             Container(
@@ -51,10 +52,11 @@ class ChangePassword_view extends StatelessWidget {
                 // ignore: prefer_const_constructors
                 decoration: InputDecoration(
                   prefixIcon: Icon(
-                    Icons.email,
+                    Icons.lock_reset,
                   ),
                   hintText: 'Confirmar Contraseña',
                 ),
+                obscureText: true,
               ),
             ),
             Container(
