@@ -2,6 +2,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart'
     show AppBar, BottomNavigationBar, BottomNavigationBarItem, BottomNavigationBarType, BoxDecoration, BuildContext, Center, Color, Drawer, DrawerHeader, Expanded, Icon, Icons, Image, ListTile, ListView, MaterialPageRoute, Navigator, Row, Scaffold, State, StatefulWidget, Text, TextStyle, Widget;
+import 'package:from_end/src/pages/pageChats.dart';
+import 'package:from_end/src/pages/pageMembers.dart';
 import 'package:from_end/src/widgets/viewWelcome.dart';
 
 // ignore: camel_case_types
@@ -106,7 +108,8 @@ class _main_viewState extends State<viewoptions> {
               ),
               textColor: const Color(0xffe4f2fb),
               onTap: () {
-                Navigator.pop(context);
+                Navigator.push(context, MaterialPageRoute(
+                  builder: ((context) => const membersPage())));
               },
             ),
             ListTile(
@@ -133,7 +136,6 @@ class _main_viewState extends State<viewoptions> {
               child: ListTile(
                 tileColor: const Color.fromARGB(255, 0, 0, 0),
                 selectedTileColor: const Color(0xf305718D),
-                
                 // ignore: prefer_const_constructors
                 title: Text(
                   "cerrar seccion",
@@ -162,24 +164,34 @@ class _main_viewState extends State<viewoptions> {
           type: BottomNavigationBarType.fixed,
           backgroundColor: const Color(0xff07708c),
           onTap: (index) => setState(() {
-                _index = index;
+                //_index = index;
+                switch(index){
+                  case 0:
+                    break;
+                  case 1:
+                    Navigator.push(context, MaterialPageRoute(builder: ((context) => const chatsPage())));
+                    break;
+                  case 2:
+                    //Navigator.push(context, MaterialPageRoute(builder: ((context) => const membersPage())));
+                    break;
+                  case 3: 
+                    //Navigator.push(context, MaterialPageRoute(builder: ((context) => const membersPage())));
+                    break;
+                    //Navigator.push(context, MaterialPageRoute(builder: ((context) => const membersPage())));
+                  case 4: break;
+                }
               }),
           items:  const [
-            
              BottomNavigationBarItem(
-                icon: ImageIcon(
-                  AssetImage('assets/images/logo.png',),
-                  
-                  
-                  ), label: "Menu"),
+              icon: ImageIcon(AssetImage('assets/images/logo.png',),), label: "Menu"),
             BottomNavigationBarItem(
-                icon: Icon(Icons.messenger_outline_sharp,), label: "Mensajes"),
+              icon: Icon(Icons.messenger_outline_sharp,), label: "Mensajes"),
             BottomNavigationBarItem(
-                icon: Icon(Icons.add_box_outlined), label: "Agregar"),
+              icon: Icon(Icons.add_box_outlined), label: "Agregar"),
             BottomNavigationBarItem(
-                icon: Icon(Icons.notifications_none_outlined),
-                label: "Notificaciones"),
-            BottomNavigationBarItem(icon: Icon(Icons.person), label: "Perfil"),
+              icon: Icon(Icons.notifications_none_outlined),label: "Notificaciones"),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person), label: "Perfil"),
           ]),
     );
   }
