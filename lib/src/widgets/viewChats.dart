@@ -22,9 +22,9 @@ class _viewChatsState extends State<viewChats> {
       appBar: AppBar(
         backgroundColor: const Color(0xff29859a),
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_new),
+          icon: const Icon(Icons.arrow_back_ios_new, color: Color(0xff29859a)),
           onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: ((context) => const viewoptions())));
+            //Navigator.push(context, MaterialPageRoute(builder: ((context) => const viewoptions())));
           },
         ),  
         title: const Text('M E N S A J E S', style: TextStyle(fontSize: 20)),
@@ -186,25 +186,6 @@ class _viewChatsState extends State<viewChats> {
         ),
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-          currentIndex: _index,
-          type: BottomNavigationBarType.fixed,
-          backgroundColor: const Color(0xff07708c),
-          onTap: ((value) => setState(() {
-            _index = value;
-          })),
-          items:  const [
-            BottomNavigationBarItem(
-              icon: ImageIcon(AssetImage('assets/images/logo.png',),), label: "Menu"),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.messenger_outline_sharp,), label: "Mensajes"),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.add_box_outlined), label: "Agregar"),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.notifications_none_outlined),label: "Notificaciones"),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person), label: "Perfil"),
-          ]),
     );
   }
 }

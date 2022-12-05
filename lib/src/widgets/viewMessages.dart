@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:from_end/src/pages/pageMenu.dart';
+import 'package:from_end/src/pages/pageOptions.dart';
 import 'package:from_end/src/widgets/viewChats.dart';
 import 'package:from_end/src/widgets/viewOptions.dart';
+import 'package:from_end/src/widgets/viewWelcome.dart';
 
 class viewMessages extends StatefulWidget {
   viewMessages({Key? key}) : super(key: key);
@@ -19,7 +22,7 @@ class _viewMessagesState extends State<viewMessages> {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios_new, size: 40),
           onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: ((context) => const viewChats())));
+            Navigator.push(context, MaterialPageRoute(builder: ((context) => const optionPage())));
           },
         ),  
         title: const Text('Dulce Mendoza', style: TextStyle(fontSize: 20)),
