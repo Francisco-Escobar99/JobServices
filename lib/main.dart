@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:from_end/src/widgets/ViewSplachs.dart';
+import 'package:from_end/src/widgets/viewsLender/viewProfile_lender.dart';
+import 'package:from_end/src/widgets/viewsLogin/ViewSplachs.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,10 +14,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
+      theme: ThemeData( 
         primarySwatch: Colors.blue,
       ),
-      home: const splashScreen(),
+      //home: const splashScreen(),
+      home: viewProfile_lender(),
     );
   }
 }
