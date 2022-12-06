@@ -3,14 +3,14 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class viewProfile_lender extends StatefulWidget {
-  viewProfile_lender({Key? key}) : super(key: key);
+class viewdisplacementGroup_lender extends StatefulWidget {
+  viewdisplacementGroup_lender({Key? key}) : super(key: key);
 
   @override
-  State<viewProfile_lender> createState() => _viewProfile_lenderState();
+  State<viewdisplacementGroup_lender> createState() => _viewdisplacementGroup_lenderState();
 }
 
-class _viewProfile_lenderState extends State<viewProfile_lender> {
+class _viewdisplacementGroup_lenderState extends State<viewdisplacementGroup_lender> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -219,7 +219,134 @@ class _viewProfile_lenderState extends State<viewProfile_lender> {
                   ],
                 ),
               ),
-
+              Container(
+                margin: const EdgeInsets.only(top: 5, left: 30, right: 30),
+                child: const Text('Área de especialidad', style: TextStyle(color: Color(0xff04738b)),),
+              ),
+              Container(
+                margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 30),
+                color:  const Color(0xff04738b),
+                height: 1,
+              ),
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+                child: Row(
+                  children: [
+                    Icon(Icons.stars, color: Color(0xff04738b)),
+                    SizedBox(width: 5),
+                    Text('Especialidad', style: TextStyle(color: Color(0xff04738b))),
+                    SizedBox(width: 10),
+                    Icon(Icons.stars, color: Color(0xff04738b)),
+                    SizedBox(width: 5),
+                    Text('Especialidad', style: TextStyle(color: Color(0xff04738b))),
+                    SizedBox(width: 10),
+                    Icon(Icons.stars, color: Color(0xff04738b)),
+                    SizedBox(width: 5),
+                    Text('Especialidad', style: TextStyle(color: Color(0xff04738b))),
+                  ],
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.only(top: 5, left: 30, right: 30),
+                child: const Text('Documentos', style: TextStyle(color: Color(0xff04738b)),),
+              ),
+              Container(
+                margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 30),
+                color:  const Color(0xff04738b),
+                height: 1,
+              ),
+              Row(
+                children: [
+                  Column(
+                    children: [
+                      Text('Curriculum', style: TextStyle(color: Color(0xff04738b))),
+                      Container(  
+                      alignment: Alignment.center,
+                        margin: const EdgeInsets.symmetric(horizontal: 40, vertical: 5),
+                        //color: Colors.amber,
+                        height: 30,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                          color: const Color.fromARGB(170, 172, 232, 246),
+                          border: Border.all(color: const Color(0xff04738b))
+                        ),
+                        child: Row(
+                          children: const [
+                            SizedBox(width: 5),
+                            Icon(Icons.upload_file, size: 15, color: Color(0xff04738b),),
+                            Text('Seleccionar archivo', style: TextStyle(fontSize: 10, color: Color(0xff04738b)))
+                          ],
+                        )
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Text('Credencial', style: TextStyle(color: Color(0xff04738b))),
+                      Container( 
+                        alignment: Alignment.center, 
+                        margin: const EdgeInsets.symmetric(horizontal: 40, vertical: 5),
+                        //color: Colors.amber,
+                        height: 30,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                          color: const Color.fromARGB(170, 172, 232, 246),
+                          border: Border.all(color: const Color(0xff04738b))
+                        ),
+                        child: Row(
+                          children: const [
+                            SizedBox(width: 5),
+                            Icon(Icons.upload_file, size: 15, color: Color(0xff04738b),),
+                            Text('Seleccionar archivo', style: TextStyle(fontSize: 10, color: Color(0xff04738b)))
+                          ],
+                        )
+                      ),
+                    ],
+                  )
+                ],
+              ),
+              Container(
+                margin: const EdgeInsets.only(top: 10, left: 30, right: 30),
+                child: const Text('Redes sociales', style: TextStyle(color: Color(0xff04738b)),),
+              ),
+              Container(
+                margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 30),
+                color:  const Color(0xff04738b),
+                height: 1,
+              ),
+              Container(
+                margin: const EdgeInsets.only(top: 10, left: 30, right: 30, bottom: 10),
+                child: Row(
+                  children: const [
+                    Icon(Icons.facebook, color: Color(0xff04738b), size: 15,),
+                    SizedBox(width: 5),
+                    Text('Facebook', style: TextStyle(color: Color(0xff04738b))),
+                    //
+                    SizedBox(width: 95),
+                    Icon(Icons.photo_camera, color: Color(0xff04738b), size: 15,),
+                    SizedBox(width: 5),
+                    Text('Instagram', style: TextStyle(color: Color(0xff04738b)),)
+                  ],
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 30),
+                color:  const Color(0xff04738b),
+                height: 1,
+              ),
+              Container(
+                height: 45,
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Color(0xff04738b),
+                ),
+                child: const Image(image: AssetImage('assets/images/logo.png')),
+              ),
+              Container(
+                alignment: Alignment.center,
+                margin: const EdgeInsets.only(top: 4, bottom: 10),
+                child: const Text('Se unió en el 2021', style: TextStyle(color: Color(0xff04738b)),),
+              )
             ],
           ),
         ),
@@ -244,11 +371,6 @@ class _viewProfile_lenderState extends State<viewProfile_lender> {
           size.height * 0.0160, // 0.160 
           size.width * 0.999,
           size.height * 0.30); // 30
-      // path.quadraticBezierTo(
-      //     size.width * 0.5,
-      //     size.height * 0.30, 
-      //     size.width * 0.15,
-      //     size.height * 0.27);
       path.lineTo(size.width, 0); 
       canvas.drawPath(path, paint);
     }
