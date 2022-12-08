@@ -4,12 +4,15 @@ import 'package:flutter/material.dart';
 import 'package:from_end/src/pages/pagesClient/pageOptions_client.dart';
 import 'package:from_end/src/pages/pagesClient/pageHome_client.dart';
 import 'package:from_end/src/pages/pagesLogin/pagePassword.dart';
+import 'package:from_end/src/baken/client_connection.dart';
 
 class view_login extends StatelessWidget {
   const view_login({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final myController = TextEditingController();
+    final mycontrasella = TextEditingController();
     return SizedBox(
       height: double.infinity,
       width: double.infinity,
@@ -27,8 +30,10 @@ class view_login extends StatelessWidget {
                   color: Colors.white,
                   alignment: Alignment.topLeft,
                   onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => const Headerpage_client()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const Headerpage_client()));
                   },
                 ),
                 Image.asset(
@@ -56,6 +61,7 @@ class view_login extends StatelessWidget {
                 decoration: const InputDecoration(
                     hintText: 'Correo Electronico',
                     prefixIcon: Icon(Icons.email)),
+                controller: myController,
               ),
             ),
             Container(
@@ -63,14 +69,17 @@ class view_login extends StatelessWidget {
               child: TextFormField(
                 decoration: const InputDecoration(
                     hintText: 'Contraseña', prefixIcon: Icon(Icons.lock_reset)),
-                    obscureText: true,
+                controller: mycontrasella,
+                obscureText: true,
               ),
             ),
             TextButton(
               style: const ButtonStyle(alignment: Alignment(0.7, 0.7)),
               onPressed: () {
-                Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => const passwordPage()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const passwordPage()));
               },
               child: const Text(
                 "¿Olvidaste tu Contraseña?",
@@ -87,9 +96,24 @@ class view_login extends StatelessWidget {
                 top: 50,
               ),
               child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => const optionPage_client()));
+                onPressed: () async {
+                  Cliente dato = await conexlogit(myController.text, mycontrasella.text);
+                
+                  if(dato.status=="correcto"){
+                     var name2 =dato.name;
+                     // ignore: use_build_context_synchronously
+                     Navigator.push( context,MaterialPageRoute(builder: (context) =>  optionPage_client(name:dato.name,email:dato.email,id:dato.id, toke: dato.token,)));
+                  } else{
+                        // ignore: use_build_context_synchronously
+                        showDialog(
+                          context: context,
+                          builder: (context) => const AlertDialog(
+                            title: Text("contrasella incorrecta o email"),
+                          ));
+
+                  }
+
+                 
                 },
                 style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all(Colors.white),

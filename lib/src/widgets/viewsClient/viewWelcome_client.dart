@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:from_end/src/pages/pagesLogin/pageLogin.dart';
 import 'package:from_end/src/pages/pagesLogin/pageRegister.dart';
 
+
 class ViewHome extends StatelessWidget {
   const ViewHome({Key? key}) : super(key: key);
 
@@ -31,6 +32,7 @@ class ViewHome extends StatelessWidget {
                   label: const Text('Iniciar Sesion',
                       style: TextStyle(fontSize: 20)),
                   onPressed: () {
+                    
                     Navigator.push(
                         context,
                         MaterialPageRoute(

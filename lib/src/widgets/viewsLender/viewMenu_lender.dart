@@ -75,7 +75,7 @@ class _viewMenu_clientState extends State<viewMenu_client> {
                 color: Color(0xffe4f2fb),
               ),
               title: const Text(
-                "Solicitud",
+                "Cotizar",
                 style: TextStyle(fontSize: 17),
               ),
               textColor: const Color(0xffe4f2fb),

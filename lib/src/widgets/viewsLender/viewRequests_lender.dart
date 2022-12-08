@@ -21,7 +21,7 @@ class _viewRequests_lenderState extends State<viewRequests_lender> {
           icon: const Icon(Icons.arrow_back_ios_new, size: 40),
           onPressed: () {
             Navigator.push(context, MaterialPageRoute(
-              builder: ((context) => const optionPage_client())));
+              builder: ((context) => const optionPage_client(email: '', id: 1, name: '', toke: '',))));
           },
         ),  
         title: const Text('S O L I C I T U D E S', style: TextStyle(fontSize: 20)),

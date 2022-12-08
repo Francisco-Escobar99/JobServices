@@ -9,6 +9,10 @@ class Viewregister extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController password = TextEditingController(text: "");
+    TextEditingController name = TextEditingController(text: "");
+    TextEditingController email = TextEditingController(text: "");
+    TextEditingController passwordverficar = TextEditingController(text: "");
     return SizedBox(
       height: double.infinity,
       width: double.infinity,
@@ -26,8 +30,10 @@ class Viewregister extends StatelessWidget {
                   color: Colors.white,
                   alignment: Alignment.topLeft,
                   onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => const Headerpage_client()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const Headerpage_client()));
                   },
                 ),
                 Image.asset(
@@ -44,6 +50,7 @@ class Viewregister extends StatelessWidget {
                 decoration: const InputDecoration(
                     hintText: 'Nombre completo',
                     prefixIcon: Icon(Icons.person)),
+                controller: name,
               ),
             ),
             Container(
@@ -52,6 +59,7 @@ class Viewregister extends StatelessWidget {
                 decoration: const InputDecoration(
                     hintText: 'Correo electronico',
                     prefixIcon: Icon(Icons.email)),
+                controller: email,
               ),
             ),
             Container(
@@ -59,6 +67,7 @@ class Viewregister extends StatelessWidget {
               child: TextFormField(
                 decoration: const InputDecoration(
                     hintText: 'Contraseña', prefixIcon: Icon(Icons.lock_reset)),
+                controller: password,
                 obscureText: true,
               ),
             ),
@@ -68,6 +77,7 @@ class Viewregister extends StatelessWidget {
                 decoration: const InputDecoration(
                     hintText: 'Confirmar contraseña',
                     prefixIcon: Icon(Icons.lock_reset)),
+                controller: passwordverficar,
                 obscureText: true,
               ),
             ),
@@ -75,8 +85,17 @@ class Viewregister extends StatelessWidget {
                 padding: const EdgeInsets.only(right: 30, left: 30, top: 40),
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => HeadeRol()));
+                    if (password.text == passwordverficar.text) {
+                      
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => HeadeRol( name:name.text , password: password.text, email: email.text,)));
+                    } else {
+                      showDialog(
+                          context: context,
+                          builder: (context) => const AlertDialog(
+                            title: Text("contrasella desiguales"),
+                          ));
+                    }
                   },
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(Colors.white),

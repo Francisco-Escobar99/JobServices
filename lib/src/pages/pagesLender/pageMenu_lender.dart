@@ -9,7 +9,7 @@ class menuPage_lender extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: viewMenu_client(), //canvas
+      body: viewMenu_client(email: '', id: 1, name: '', toke: '',), //canvas
     );
   }
 }

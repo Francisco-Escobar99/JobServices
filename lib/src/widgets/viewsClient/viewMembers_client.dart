@@ -19,6 +19,7 @@ const List<Tab> tabs = <Tab>[
   ),
 ];
 
+// ignore: camel_case_types
 class view_members_client extends StatelessWidget {
   const view_members_client({super.key});
 
@@ -42,7 +43,7 @@ class view_members_client extends StatelessWidget {
             leading: IconButton(
               icon: const Icon(Icons.arrow_back_ios_new),
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: ((context) => const viewoptions_client())));
+                Navigator.push(context, MaterialPageRoute(builder: ((context) =>  viewoptions_client(email: '', id: 1, name: '', toke: '',))));
               },
             ),                                                                                                                                                                                                                             
             bottom: const TabBar (
@@ -96,6 +97,7 @@ class view_members_client extends StatelessWidget {
                           ],
                         ),
                         trailing: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: const [
                             Icon(Icons.grade, color: Color(0xff29859a), size: 30),
                             Text('4.5', style: TextStyle(color: Color(0xff29859a), fontSize: 20),),

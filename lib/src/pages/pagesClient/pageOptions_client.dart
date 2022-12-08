@@ -4,12 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:from_end/src/widgets/viewsClient/viewOptions_client.dart';
 
 class optionPage_client extends StatelessWidget {
-  const optionPage_client({super.key});
+  final int id;
+  final String email;
+  final String name;
+  final String toke;
+  const optionPage_client({super.key,  required this.id, required this.email, required this.name,required this.toke});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: viewoptions_client(), //canvas
+    return  Scaffold(
+      body: viewoptions_client(id: id, name: name, toke: toke, email:email), //canvas
     );
   }
 }

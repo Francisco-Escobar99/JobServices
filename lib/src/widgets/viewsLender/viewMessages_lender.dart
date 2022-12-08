@@ -22,7 +22,7 @@ class _viewMessages_lenderState extends State<viewMessages_lender> {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios_new, size: 40),
           onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: ((context) => const optionPage_client())));
+            Navigator.push(context, MaterialPageRoute(builder: ((context) => const optionPage_client(email: '', id: 1, name: '', toke: '',))));
           },
         ),  
         title: const Text('Dulce Mendoza', style: TextStyle(fontSize: 20)),

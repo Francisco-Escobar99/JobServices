@@ -137,7 +137,7 @@ class _viewdisplacementGroup_lenderState extends State<viewdisplacementGroup_len
                         ),
                         Row(
                           children: const [
-                            SizedBox(width: 13),
+                            SizedBox(width: 8),
                             Icon(Icons.star_border, color: Color(0xff29859a)),
                             Icon(Icons.star_border, color: Color(0xff29859a)),
                             Icon(Icons.star_border, color: Colors.grey),
@@ -232,10 +232,10 @@ class _viewdisplacementGroup_lenderState extends State<viewdisplacementGroup_len
                 margin: EdgeInsets.symmetric(horizontal: 30, vertical: 5),
                 child: Row(
                   children: [
-                    Icon(Icons.stars, color: Color(0xff04738b)),
-                    SizedBox(width: 5),
-                    Text('Especialidad', style: TextStyle(color: Color(0xff04738b))),
-                    SizedBox(width: 10),
+                    // Icon(Icons.stars, color: Color(0xff04738b)),
+                    // SizedBox(width: 5),
+                    // Text('Especialidad', style: TextStyle(color: Color(0xff04738b))),
+                    // SizedBox(width: 10),
                     Icon(Icons.stars, color: Color(0xff04738b)),
                     SizedBox(width: 5),
                     Text('Especialidad', style: TextStyle(color: Color(0xff04738b))),

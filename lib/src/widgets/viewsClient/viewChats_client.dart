@@ -60,9 +60,9 @@ class _viewChats_clientState extends State<viewChats_client> {
                   ),
                 ),
                 Container(
-                  margin: const EdgeInsets.only(top: 10),
+                  margin: const EdgeInsets.only(top: 0),
                   height: 47,
-                  width: 60,
+                  width: 50,
                   //color: Color(0xff29859a),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
