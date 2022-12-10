@@ -1,13 +1,11 @@
 
 // ignore_for_file: file_names
-
 import 'package:flutter/material.dart';
 
-import 'package:from_end/src/widgets/viewsClient/viewWelcome_client.dart';
+import 'package:from_end/src/widgets/viewsLogin/viewHome.dart';
 
-
-class Headerpage_client extends StatelessWidget {
-  const Headerpage_client({super.key});
+class pageHome extends StatelessWidget {
+  const pageHome({super.key});
 
   @override
   Widget build(BuildContext context) {

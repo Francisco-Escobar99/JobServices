@@ -2,6 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:from_end/src/pages/pagesClient/pageMessages_client.dart';
+import 'package:from_end/src/widgets/viewsClient/viewMessages_client.dart';
 import 'package:from_end/src/widgets/viewsClient/viewOptions_client.dart';
 
 int _index = 0;
@@ -75,7 +76,7 @@ class _viewChats_lenderState extends State<viewChats_lender> {
             GestureDetector(
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(
-                  builder: ((context) => const messagesPage_client())));
+                  builder: ((context) => viewMessages_client())));
               },
               child: SizedBox(
               width: 380,

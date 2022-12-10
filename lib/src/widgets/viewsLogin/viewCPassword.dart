@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 
-class ChangePassword_view extends StatelessWidget {
-  const ChangePassword_view({Key? key}) : super(key: key);
+class viewChangePassword extends StatelessWidget {
+  const viewChangePassword({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

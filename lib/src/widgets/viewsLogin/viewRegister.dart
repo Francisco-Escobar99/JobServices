@@ -1,11 +1,13 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
-import 'package:from_end/src/pages/pagesClient/pageHome_client.dart';
-import 'package:from_end/src/pages/pagesLogin/pageRol.dart';
+import 'package:from_end/src/pages/pagesLogin/pageHome.dart';
+import 'package:from_end/src/pages/pagesLogin/pageSelectedRol.dart';
+import 'package:from_end/src/widgets/viewsLogin/viewHome.dart';
+import 'package:from_end/src/widgets/viewsLogin/viewSelectRol.dart';
 
-class Viewregister extends StatelessWidget {
-  const Viewregister({Key? key}) : super(key: key);
+class viewRegister extends StatelessWidget {
+  const viewRegister({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +35,7 @@ class Viewregister extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const Headerpage_client()));
+                            builder: (context) => const ViewHome()));
                   },
                 ),
                 Image.asset(
@@ -88,7 +90,7 @@ class Viewregister extends StatelessWidget {
                     if (password.text == passwordverficar.text) {
                       
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => HeadeRol( name:name.text , password: password.text, email: email.text,)));
+                          MaterialPageRoute(builder: (context) => viewSelectedRol( name:name.text , password: password.text, email: email.text, categoria: "",)));
                     } else {
                       showDialog(
                           context: context,

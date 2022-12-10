@@ -2,10 +2,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:from_end/src/pages/pagesLogin/pageLogin.dart';
-import 'package:from_end/src/pages/pagesLogin/pageCPassword.dart';
+import 'package:from_end/src/pages/pagesLogin/pageChangePassword.dart';
+import 'package:from_end/src/widgets/viewsLogin/viewCPassword.dart';
+import 'package:from_end/src/widgets/viewsLogin/viewLogin.dart';
 
-class Password_view extends StatelessWidget {
-  const Password_view({Key? key}) : super(key: key);
+class viewPassword extends StatelessWidget {
+  const viewPassword({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +31,7 @@ class Password_view extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const loginPage()));
+                            builder: (context) => const viewLogin()));
                   },
                 ),
                 Image.asset(
@@ -82,7 +84,7 @@ class Password_view extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const CpasswordPage()));
+                          builder: (context) => const viewChangePassword()));
                 },
                 style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all(Colors.white),

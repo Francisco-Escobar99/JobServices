@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:from_end/src/widgets/viewsClient/viewWelcome_client.dart';
+import 'package:from_end/src/widgets/viewsLogin/viewHome.dart';
 import 'package:from_end/src/widgets/viewsLender/viewDisplacementGroup_lender.dart';
 import 'package:from_end/src/widgets/viewsLender/viewProfile_lender.dart';
 import 'package:from_end/src/widgets/viewsLogin/ViewSplachs.dart';
@@ -19,8 +19,6 @@ class MyApp extends StatelessWidget {
       theme: ThemeData( 
         primarySwatch: Colors.blue,
       ),
-      //home: const splashScreen(),
-      //home: viewProfile_lender(),
       home: const splashScreen(),
     );
   }

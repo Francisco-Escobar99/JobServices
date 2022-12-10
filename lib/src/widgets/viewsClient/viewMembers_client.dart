@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:from_end/main.dart';
 import 'package:from_end/src/widgets/viewsClient/viewOptions_client.dart';
-import 'package:from_end/src/widgets/viewsClient/viewWelcome_client.dart';
+import 'package:from_end/src/widgets/viewsLogin/viewHome.dart';
 
 const List<Tab> tabs = <Tab>[
   Tab(
@@ -20,8 +20,8 @@ const List<Tab> tabs = <Tab>[
 ];
 
 // ignore: camel_case_types
-class view_members_client extends StatelessWidget {
-  const view_members_client({super.key});
+class viewMembers_client extends StatelessWidget {
+  const viewMembers_client({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +43,7 @@ class view_members_client extends StatelessWidget {
             leading: IconButton(
               icon: const Icon(Icons.arrow_back_ios_new),
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: ((context) =>  viewoptions_client(email: '', id: 1, name: '', toke: '',))));
+                Navigator.push(context, MaterialPageRoute(builder: ((context) =>  viewOptions_client(email: '', id: 1, name: '', toke: '',))));
               },
             ),                                                                                                                                                                                                                             
             bottom: const TabBar (

@@ -3,10 +3,14 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:from_end/src/pages/pagesClient/pageMembers_client.dart';
 import 'package:from_end/src/pages/pagesLender/pageRequests.dart';
-import 'package:from_end/src/widgets/viewsClient/viewWelcome_client.dart';
+import 'package:from_end/src/widgets/viewsClient/viewMembers_client.dart';
+import 'package:from_end/src/widgets/viewsLogin/viewHome.dart';
 import 'package:from_end/src/baken/client_connection.dart';
 import 'package:http/http.dart';
 import 'package:http/http.dart' as http;
+
+import '../../pages/pagesClient/pageEditRequest_client.dart';
+import '../../pages/pagesLender/pageEditRequest_lender.dart';
 
 class viewMenu_client extends StatefulWidget {
   final int id;
@@ -128,10 +132,10 @@ class _viewMenu_clientState extends State<viewMenu_client> {
               ),
               textColor: const Color(0xffe4f2fb),
               onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: ((context) => const requestsPage_lender())));
+                // Navigator.push(
+                //     context,
+                //     MaterialPageRoute(
+                //         builder: ((context) => const requestsPage_lender())));
               },
             ),
             ListTile(
@@ -151,7 +155,7 @@ class _viewMenu_clientState extends State<viewMenu_client> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: ((context) => const membersPage_client())));
+                        builder: ((context) => const viewMembers_client())));
               },
             ),
             ListTile(
@@ -238,7 +242,7 @@ class _viewMenu_clientState extends State<viewMenu_client> {
                           children: [
                             GestureDetector(
                               onTap: (() {
-                                // accion editar
+                                // accion 
                               }),
                               child: Container(
                                 alignment: Alignment.center,
@@ -257,6 +261,8 @@ class _viewMenu_clientState extends State<viewMenu_client> {
                             GestureDetector(
                               onTap: (() {
                                 // accion eliminar
+                                String dato="${usersData![index]["idpublicasiones"]}";
+                                elCliente(dato);
                               }),
                               child: Container(
                                 alignment: Alignment.center,

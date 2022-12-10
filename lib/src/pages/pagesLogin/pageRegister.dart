@@ -3,13 +3,13 @@
 import 'package:flutter/material.dart';
 import 'package:from_end/src/widgets/viewsLogin/viewRegister.dart';
 
-class registerPage extends StatelessWidget {
-  const registerPage({super.key});
+class pageRegister extends StatelessWidget {
+  const pageRegister({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Viewregister(), //canvas
+      body: viewRegister(), //canvas
     );
   }
 }

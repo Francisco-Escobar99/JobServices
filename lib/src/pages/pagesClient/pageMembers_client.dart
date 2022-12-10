@@ -4,18 +4,18 @@ import 'package:from_end/src/widgets/viewsClient/viewMembers_client.dart';
 import 'package:from_end/src/widgets/viewsClient/viewMessages_client.dart';
 //import 'package:flutter_application_1/widgets/view_messages.dart';
 
-class membersPage_client extends StatefulWidget {
-  const membersPage_client({super.key});
+class pageMembers_client extends StatefulWidget {
+  const pageMembers_client({super.key});
 
   @override
-  State<membersPage_client> createState() => _membersPage_clientState();
+  State<pageMembers_client> createState() => _pageMembers_clientState();
 }
 
-class _membersPage_clientState extends State<membersPage_client> {
+class _pageMembers_clientState extends State<pageMembers_client> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: view_members_client(), //canvas
+      body: viewMembers_client(), //canvas
     );
   }
 }

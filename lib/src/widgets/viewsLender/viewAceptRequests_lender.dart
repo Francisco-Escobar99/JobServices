@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:from_end/src/pages/pagesLender/pageRequests.dart';
+import 'package:from_end/src/widgets/viewsLender/viewRequests_lender.dart';
 
 class viewAceptRequests_lender extends StatefulWidget {
   viewAceptRequests_lender({Key? key}) : super(key: key);
@@ -20,7 +21,7 @@ class _viewAceptRequests_lenderState extends State<viewAceptRequests_lender> {
           icon: const Icon(Icons.arrow_back_ios_new, size: 40),
           onPressed: () {
             Navigator.push(context, MaterialPageRoute(
-              builder: ((context) => const requestsPage_lender())));
+              builder: ((context) => viewRequests_lender())));
           },
         ),  
         //title: const Text('S O L I C I T U D E S', style: TextStyle(fontSize: 20)),

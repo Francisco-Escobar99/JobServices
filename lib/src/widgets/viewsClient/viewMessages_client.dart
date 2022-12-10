@@ -3,7 +3,7 @@ import 'package:from_end/src/pages/pagesClient/pageMenu_client.dart';
 import 'package:from_end/src/pages/pagesClient/pageOptions_client.dart';
 import 'package:from_end/src/widgets/viewsClient/viewChats_client.dart';
 import 'package:from_end/src/widgets/viewsClient/viewOptions_client.dart';
-import 'package:from_end/src/widgets/viewsClient/viewWelcome_client.dart';
+import 'package:from_end/src/widgets/viewsLogin/viewHome.dart';
 
 class viewMessages_client extends StatefulWidget {
   viewMessages_client({Key? key}) : super(key: key);
@@ -22,7 +22,7 @@ class _viewMessages_clientState extends State<viewMessages_client> {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios_new, size: 40),
           onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: ((context) => const optionPage_client(email: '', id: 1, name: '', toke: '',))));
+            Navigator.push(context, MaterialPageRoute(builder: ((context) => viewOptions_client(email: '', id: 1, name: '', toke: '',))));
           },
         ),  
         title: const Text('Dulce Mendoza', style: TextStyle(fontSize: 20)),

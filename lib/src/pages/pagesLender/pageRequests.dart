@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:from_end/src/widgets/viewsLender/viewAceptRequests_lender.dart';
 import 'package:from_end/src/widgets/viewsLender/viewRequests_lender.dart';
 
-class requestsPage_lender extends StatefulWidget {
-  const requestsPage_lender({super.key});
+class pageRequests_lender extends StatefulWidget {
+  const pageRequests_lender({super.key});
 
   @override
-  State<requestsPage_lender> createState() => _requestsPage_lenderState();
+  State<pageRequests_lender> createState() => _pageRequests_lenderState();
 }
 
-class _requestsPage_lenderState extends State<requestsPage_lender> {
+class _pageRequests_lenderState extends State<pageRequests_lender> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

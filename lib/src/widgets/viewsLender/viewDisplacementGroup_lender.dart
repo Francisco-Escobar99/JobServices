@@ -3,14 +3,14 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class viewdisplacementGroup_lender extends StatefulWidget {
-  viewdisplacementGroup_lender({Key? key}) : super(key: key);
+class viewDisplacementGroup_lender extends StatefulWidget {
+  viewDisplacementGroup_lender({Key? key}) : super(key: key);
 
   @override
-  State<viewdisplacementGroup_lender> createState() => _viewdisplacementGroup_lenderState();
+  State<viewDisplacementGroup_lender> createState() => _viewDisplacementGroup_lenderState();
 }
 
-class _viewdisplacementGroup_lenderState extends State<viewdisplacementGroup_lender> {
+class _viewDisplacementGroup_lenderState extends State<viewDisplacementGroup_lender> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -1,6 +1,6 @@
 // ignore_for_file: file_names
 import 'package:flutter/material.dart';
-import 'package:from_end/src/widgets/viewsClient/viewWelcome_client.dart';
+import 'package:from_end/src/widgets/viewsLogin/viewHome.dart';
 
 // ignore: camel_case_types
 class splashScreen extends StatefulWidget {

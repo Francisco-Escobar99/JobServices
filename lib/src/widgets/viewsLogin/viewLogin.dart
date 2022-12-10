@@ -2,12 +2,17 @@
 
 import 'package:flutter/material.dart';
 import 'package:from_end/src/pages/pagesClient/pageOptions_client.dart';
-import 'package:from_end/src/pages/pagesClient/pageHome_client.dart';
+import 'package:from_end/src/pages/pagesLogin/pageHome.dart';
+import 'package:from_end/src/pages/pagesLender/pageOptions_lender.dart';
 import 'package:from_end/src/pages/pagesLogin/pagePassword.dart';
 import 'package:from_end/src/baken/client_connection.dart';
+import 'package:from_end/src/widgets/viewsClient/viewOptions_client.dart';
+import 'package:from_end/src/widgets/viewsLender/viewOptions_lender.dart';
+import 'package:from_end/src/widgets/viewsLogin/viewHome.dart';
+import 'package:from_end/src/widgets/viewsLogin/viewPassword.dart';
 
-class view_login extends StatelessWidget {
-  const view_login({Key? key}) : super(key: key);
+class viewLogin extends StatelessWidget {
+  const viewLogin({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +38,7 @@ class view_login extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const Headerpage_client()));
+                            builder: (context) => const pageHome()));
                   },
                 ),
                 Image.asset(
@@ -43,17 +48,6 @@ class view_login extends StatelessWidget {
                 )
               ],
             ),
-            /* Container(
-              alignment: Alignment(0, 2),
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xff04738b),
-                    shape: const CircleBorder(),
-                    padding: const EdgeInsets.all(10)),
-                child: const Icon(Icons.arrow_back_ios, size: 80),
-                onPressed: () {},
-              ),
-            ),*/
             Container(
               padding: const EdgeInsets.only(
                   top: 70, bottom: 40, right: 30, left: 30),
@@ -79,7 +73,7 @@ class view_login extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const passwordPage()));
+                        builder: (context) => const pagePassword()));
               },
               child: const Text(
                 "¿Olvidaste tu Contraseña?",
@@ -98,22 +92,28 @@ class view_login extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: () async {
                   Cliente dato = await conexlogit(myController.text, mycontrasella.text);
-                
                   if(dato.status=="correcto"){
-                     var name2 =dato.name;
+                    print('Cliente');
+                     //var name2 = dato.name;
                      // ignore: use_build_context_synchronously
-                     Navigator.push( context,MaterialPageRoute(builder: (context) =>  optionPage_client(name:dato.name,email:dato.email,id:dato.id, toke: dato.token,)));
-                  } else{
-                        // ignore: use_build_context_synchronously
-                        showDialog(
-                          context: context,
-                          builder: (context) => const AlertDialog(
-                            title: Text("contrasella incorrecta o email"),
+                     Navigator.push( context,MaterialPageRoute(builder: (context) =>  pageOptions_client(name:dato.name,email:dato.email,id:dato.id, toke: dato.token,)));
+                  } 
+                  else{
+                        Prestador dato1 = await conexLender(myController.text, mycontrasella.text);
+                        print('Prestador');
+                        if(dato1.status=="correcto"){
+                          //var name2 = dato.name;
+                          // ignore: use_build_context_synchronously
+                          Navigator.push( context,MaterialPageRoute(builder: (context) =>  pageOption_lender(name:dato1.name,email:dato1.email,id:dato1.id, toke: dato1.token)));
+                        } else {
+                          showDialog(
+                            context: context,
+                            builder: (context) => const AlertDialog(
+                              title: Text("contraseña incorrecta o email"),
                           ));
-
+                        }
+                        // ignore: use_build_context_synchronously
                   }
-
-                 
                 },
                 style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all(Colors.white),

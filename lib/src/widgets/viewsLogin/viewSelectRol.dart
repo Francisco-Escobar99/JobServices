@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:from_end/src/baken/client_connection.dart';
 import 'package:from_end/src/pages/pagesLogin/pageLogin.dart';
+import 'package:from_end/src/widgets/viewsLogin/viewLogin.dart';
 
-class Viewrol extends StatelessWidget {
+class viewSelectedRol extends StatelessWidget {
   final String password;
   final String email;
   final String name;
-  const Viewrol(
+  final String categoria;
+  const viewSelectedRol(
       {super.key,
       required this.password,
       required this.email,
+      required this.categoria,
       required this.name});
 
   @override
@@ -48,8 +51,7 @@ class Viewrol extends StatelessWidget {
                   onPressed: () {
                     addcliente(name, email, password);
                     Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => loginPage()));
-
+                          MaterialPageRoute(builder: (context) => const viewLogin()));
                     // vistas prestatario (cliente)
                   },
                   style: ButtonStyle(
@@ -77,6 +79,7 @@ class Viewrol extends StatelessWidget {
                           TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
                   onPressed: () {
                     // vistas presator de servicio
+                    addPrestador(name, email, password, categoria);
                   },
                   style: ButtonStyle(
                       backgroundColor:
