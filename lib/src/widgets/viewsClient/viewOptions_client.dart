@@ -64,7 +64,7 @@ class _main_viewState extends State<viewOptions_client> {
     pageChats_client(),
     pageRegisterRequest_client(email: email, id: id, name: name, toke: toke,),
     pageNotifications_client(),
-    pageProfile_client()
+    pageProfile_client(email: email, id: id, name: name, toke: toke,)
   ];
     return Scaffold(
       body: screens[currentIndex],

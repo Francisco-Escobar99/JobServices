@@ -43,7 +43,8 @@ class viewMembers_client extends StatelessWidget {
             leading: IconButton(
               icon: const Icon(Icons.arrow_back_ios_new),
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: ((context) =>  viewOptions_client(email: '', id: 1, name: '', toke: '',))));
+                Navigator.pop(context);
+                //Navigator.push(context, MaterialPageRoute(builder: ((context) =>  viewOptions_client(email: '', id: 1, name: '', toke: '',))));
               },
             ),                                                                                                                                                                                                                             
             bottom: const TabBar (

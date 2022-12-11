@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 void conex() {
-  Uri lick = Uri.parse("http://192.168.0.4:3000/cliente");
+  Uri lick = Uri.parse("http://192.168.0.9:3000/cliente");
   // ------------------------
   http.get(lick).then((res) {
     // ignore: avoid_print
@@ -12,7 +12,7 @@ void conex() {
 }
 
 conexpublicasion() {
-  Uri lick = Uri.parse("http://192.168.0.4:3003/publicasion");
+  Uri lick = Uri.parse("http://192.168.0.9:3003/publicasion");
   http.get(lick).then((res) {
     // ignore: avoid_print
     print(res);
@@ -21,7 +21,7 @@ conexpublicasion() {
 
 Future addpubli(titulo, descripcion, cargo, idcliente, comentarios, direccion,
     nombreClie) async {
-  String date = "http://192.168.0.4:4000/publicasion/addUser";
+  String date = "http://192.168.0.9:4000/publicasion/addUser";
   var body = {
     'titulo': titulo,
     'descripcion': descripcion,
@@ -44,7 +44,7 @@ Future addpubli(titulo, descripcion, cargo, idcliente, comentarios, direccion,
   return null;
 }
 Future mostar() async {
-  String date = "http://192.168.0.4:4000/publicasion/verificar";
+  String date = "http://192.168.0.9:4000/publicasion/verificar";
   Map data;
   List usersData;
   String url = date;
@@ -58,7 +58,7 @@ Future mostar() async {
 }
 
 Future conexlogit(email, password) async {
-  String date = "http://192.168.0.4:3000/auth/login";
+  String date = "http://192.168.0.9:3000/auth/login";
   // 192.168.8.102
   var body = {'email': email, 'password': password};
   String url = date;
@@ -78,7 +78,7 @@ Future conexlogit(email, password) async {
 }
 
 Future conexLender(email, password) async {
-  String date = "http://192.168.0.4:3001/auth/login";
+  String date = "http://192.168.0.9:3001/auth/login";
   // 192.168.8.102
   var body = {'email': email, 'password': password};
   String url = date;
@@ -154,8 +154,26 @@ class Prestador {
 
 Future addcliente(name, email, password) async {
   // ----------------------------
-  String date = "http://192.168.0.4:3000/cliente/addUser";
+  String date = "http://192.168.0.9:3000/cliente/addUser";
   var body = {'name': name, 'email': email, 'password': password};
+  String url = date;
+  final http.Response response = await http.post(
+    Uri.parse(url),
+    body: json.encode(body),
+    headers: {"Content-Type": "application/json"},
+  );
+
+  if (response.statusCode == 200) {
+    print(response.body);
+    return response.body;
+  }
+  return null;
+}
+
+Future addcotizacion(materiales, descripcion, precio) async {
+  // ----------------------------
+  String date = "http://192.168.0.9:3002/cotizacion/addUser";
+  var body = {'materiales': materiales, 'descripcion': descripcion, 'precio': precio};
   String url = date;
   final http.Response response = await http.post(
     Uri.parse(url),
@@ -172,7 +190,7 @@ Future addcliente(name, email, password) async {
 
 Future addPrestador(name, email, password, categoria) async {
   // ----------------------------
-  String date = "http://192.168.0.4:3001/prestador/addUser";
+  String date = "http://192.168.0.9:3001/prestador/addUser";
   var body = {'name': name, 'email': email, 'password': password, 'categoria': categoria};
   String url = date;
   final http.Response response = await http.post(
@@ -189,7 +207,7 @@ Future addPrestador(name, email, password, categoria) async {
 }
 
 Future elCliente(id) async {
-  String date = "http://192.168.0.4:4000/publicasion/deleteUser/";
+  String date = "http://192.168.0.9:4000/publicasion/deleteUser/";
   var dato = id;
   String url = date + dato;
   print(url);
@@ -209,7 +227,7 @@ Future elCliente(id) async {
 }
 
 Future edCliente(id,titulo,descr,cargo,idcliente,comen,direc,nombrecli,) async {
-  String date = "http://192.168.0.4:4000/publicasion/updateUser/";
+  String date = "http://192.168.0.9:4000/publicasion/updateUser/";
   var dato = id;
   String url = date + dato;
   print(url);

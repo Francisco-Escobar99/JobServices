@@ -34,6 +34,8 @@ class _viewRegisterRequest_lenderState extends State<viewRegisterRequest_lender>
     final materiales = TextEditingController();
     final precio = TextEditingController();
     final descpcion = TextEditingController();
+    final idpublicacion = TextEditingController();
+    final idprestador = TextEditingController();
     return SizedBox(
       height: double.infinity,
       width: double.infinity,
@@ -98,6 +100,7 @@ class _viewRegisterRequest_lenderState extends State<viewRegisterRequest_lender>
                   // print( direccion.text);
                   // addpubli(titulo.text, descpcion.text, cargo.text, id,
                   //     comentario.text, direccion.text, name);
+                  //addcotizacion(materiales.text, descpcion.text, precio.text);                      AGREGAR COTIZACION
                 },
                 style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all(Colors.white),

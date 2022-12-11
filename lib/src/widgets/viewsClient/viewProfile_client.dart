@@ -2,13 +2,28 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class viewProfile_client extends StatefulWidget {
-  viewProfile_client({Key? key}) : super(key: key);
+  final int id;
+  final String email;
+  final String name;
+  final String toke;
+  viewProfile_client({
+    required this.toke,
+    required this.id,
+    required this.name,
+    required this.email,
+  });
+  //viewProfile_client({Key? key}) : super(key: key);
 
   @override
-  State<viewProfile_client> createState() => _viewProfile_clientState();
+  State<viewProfile_client> createState() => _viewProfile_clientState(id: id, email: email, name: name, toke: toke);
 }
 
 class _viewProfile_clientState extends State<viewProfile_client> {
+  final int id;
+  final String email;
+  final String name;
+  final String toke;
+  _viewProfile_clientState({required this.toke, required this.id, required this.name, required this.email, });
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,7 +56,7 @@ class _viewProfile_clientState extends State<viewProfile_client> {
                 alignment: Alignment.center,
                 child: Container(
                   margin: const EdgeInsets.only(top: 8),
-                  child: const Text('Dulce Mendoza', style: TextStyle(color: Color(0xff04738b), fontSize: 30, fontWeight: FontWeight.bold)),
+                  child: Text(name, style: TextStyle(color: Color(0xff04738b), fontSize: 30, fontWeight: FontWeight.bold)),
                 ),
               ),
               Container(
@@ -76,10 +91,10 @@ class _viewProfile_clientState extends State<viewProfile_client> {
               Container(
                 margin: const EdgeInsets.only(top: 10, left: 30, right: 30),
                 child: Row(
-                  children: const [
+                  children: [
                     Icon(Icons.email, size: 15, color: Color(0xff04738b),),
                     SizedBox(width: 5),
-                    Text('Correo electrónico', style: TextStyle(color: Color(0xff04738b))),
+                    Text(email, style: TextStyle(color: Color(0xff04738b))),
                     //
                     SizedBox(width: 39),
                     Icon(Icons.person, color: Color(0xff04738b), size: 15,),
