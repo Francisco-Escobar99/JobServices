@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:from_end/src/pages/pagesLender/pageRequests.dart';
+import 'package:from_end/src/pages/pagesLender/pageRequests_lender.dart';
 import 'package:from_end/src/widgets/viewsLender/viewRequests_lender.dart';
 
 class viewAceptRequests_lender extends StatefulWidget {

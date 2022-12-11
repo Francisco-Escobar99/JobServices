@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:from_end/src/pages/pagesClient/pageMembers_client.dart';
 import 'package:from_end/src/pages/pagesLender/pageEditRequest_lender.dart';
-import 'package:from_end/src/pages/pagesLender/pageRequests.dart';
+import 'package:from_end/src/pages/pagesLender/pageRegisterRequest_lender.dart';
+//import 'package:from_end/src/pages/pagesLender/pageRequests.dart';
 import 'package:from_end/src/widgets/viewsClient/viewMembers_client.dart';
 import 'package:from_end/src/widgets/viewsLender/viewEditRequest_lender.dart';
 import 'package:from_end/src/widgets/viewsLender/viewRequests_lender.dart';
@@ -43,7 +44,7 @@ class _viewMenu_lenderState extends State<viewMenu_lender> {
       required this.name,
       required this.toke});
   getUser() async {
-    http.Response response = await http.get(Uri.parse('http://192.168.89.13:4000/publicasion/verificar'));
+    http.Response response = await http.get(Uri.parse('http://192.168.0.4:4000/publicasion/verificar'));
     data = json.decode(response.body);
     setState(() {
       usersData = data['data'];
@@ -89,8 +90,8 @@ class _viewMenu_lenderState extends State<viewMenu_lender> {
                       ),
                     ),
 
-                    const Text(
-                      "gaby gomez",
+                    Text(
+                      name,
                       style: TextStyle(fontSize: 17, color: Color(0xffe4f2fb)),
                     ),
                     // ignore: prefer_const_constructors
@@ -149,33 +150,16 @@ class _viewMenu_lenderState extends State<viewMenu_lender> {
                   builder: ((context) => const viewMembers_client())));
               },
             ),
-            ListTile(
-              tileColor: const Color(0xff29859a),
-              selectedTileColor: const Color(0xf305718D),
-              leading: const Icon(
-                Icons.manage_accounts,
-                color: Color(0xffe4f2fb),
-              ),
-              // ignore: prefer_const_constructors
-              title: Text(
-                "Configuraciones",
-                style: const TextStyle(fontSize: 17),
-              ),
-              textColor: const Color(0xffe4f2fb),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
             Container(
               height: space,
-              alignment: Alignment.bottomLeft,
+              alignment: Alignment.topLeft,
               color: const Color(0xff29859a),
               child: ListTile(
                 tileColor: const Color.fromARGB(255, 0, 0, 0),
                 selectedTileColor: const Color(0xf305718D),
                 // ignore: prefer_const_constructors
                 title: Text(
-                  "cerrar seccion",
+                  "Cerrar sesión",
                   textAlign: TextAlign.right,
                   style: const TextStyle(fontSize: 17),
                 ),
@@ -198,10 +182,6 @@ class _viewMenu_lenderState extends State<viewMenu_lender> {
               padding: const EdgeInsets.all(5.0),
               child: Row(
                 children: <Widget>[
-                  // Padding(
-                  //   padding: const EdgeInsets.all(12.0),
-                  //   child: Text("$index"),
-                  // ),
                   Container(
                     margin: EdgeInsets.symmetric(horizontal: 5, vertical: 10),
                     alignment: Alignment.center,
@@ -235,7 +215,7 @@ class _viewMenu_lenderState extends State<viewMenu_lender> {
                                   Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => viewEditRequest_lender(email: email, id: id, name: name, toke: toke,)));
+                                      builder: (context) => pageRegisterRequest_lender(email: email, id: id, name: name, toke: toke,)));
                                 //viewRegisterRequest_lender(toke: toke, id: id, name: name, email: email);
                               }),
                               child: Container(

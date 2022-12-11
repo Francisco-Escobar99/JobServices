@@ -70,9 +70,9 @@ class _main_viewState extends State<viewOptions_lender> {
     final screens = [
     pageMenu_lender(email: email, id: id, name: name, toke: toke,),
     pageChats_lender(),
-    pageRegisterRequest_lender(email: email, id: id, name: name, toke: toke,),
+    //pageRegisterRequest_lender(email: email, id: id, name: name, toke: toke,),
     pageNotifications_lender(),
-    pageDisplacementGroup_lender()
+    pageDisplacementGroup_lender(email: email, id: id, name: name, toke: toke)
   ];
     return Scaffold(
       body: screens[currentIndex],
@@ -95,18 +95,18 @@ class _main_viewState extends State<viewOptions_lender> {
                     'assets/images/logo.png',
                   ),
                 ),
-                label: "Menu1"),
+                label: "Menu"),
             BottomNavigationBarItem(
                 icon: Icon(
                   Icons.messenger_outline_sharp,
                 ),
-                label: "Mensajes1"),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.add_box_outlined), label: "Agregar1"),
+                label: "Mensajes"),
+            // BottomNavigationBarItem(
+            //     icon: Icon(Icons.add_box_outlined), label: "Agregar"),
             BottomNavigationBarItem(
                 icon: Icon(Icons.notifications_none_outlined),
-                label: "Notificaciones1"),
-            BottomNavigationBarItem(icon: Icon(Icons.person), label: "Perfil1"),
+                label: "Notificaciones"),
+            BottomNavigationBarItem(icon: Icon(Icons.person), label: "Perfil"),
           ]),
     );
   }

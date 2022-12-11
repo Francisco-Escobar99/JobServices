@@ -2,7 +2,8 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:from_end/src/pages/pagesClient/pageMembers_client.dart';
-import 'package:from_end/src/pages/pagesLender/pageRequests.dart';
+import 'package:from_end/src/pages/pagesClient/pageRequests_client.dart';
+import 'package:from_end/src/pages/pagesLender/pageRequests_lender.dart';
 import 'package:from_end/src/widgets/viewsClient/viewMembers_client.dart';
 import 'package:from_end/src/widgets/viewsLogin/viewHome.dart';
 import 'package:from_end/src/baken/client_connection.dart';
@@ -93,7 +94,6 @@ class _viewMenu_clientState extends State<viewMenu_client> {
                         height: 110,
                       ),
                     ),
-
                     Text(
                       name,
                       style: TextStyle(fontSize: 17, color: Color(0xffe4f2fb)),
@@ -127,15 +127,15 @@ class _viewMenu_clientState extends State<viewMenu_client> {
                 color: Color(0xffe4f2fb),
               ),
               title: const Text(
-                "Cotización",
+                "Cotizaciones",
                 style: TextStyle(fontSize: 17),
               ),
               textColor: const Color(0xffe4f2fb),
               onTap: () {
-                // Navigator.push(
-                //     context,
-                //     MaterialPageRoute(
-                //         builder: ((context) => const requestsPage_lender())));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: ((context) => const pageRequests_client())));
               },
             ),
             ListTile(
@@ -155,26 +155,26 @@ class _viewMenu_clientState extends State<viewMenu_client> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: ((context) => const viewMembers_client())));
+                        builder: ((context) => const pageMembers_client())));
               },
             ),
-            ListTile(
-              tileColor: const Color(0xff29859a),
-              selectedTileColor: const Color(0xf305718D),
-              leading: const Icon(
-                Icons.manage_accounts,
-                color: Color(0xffe4f2fb),
-              ),
-              // ignore: prefer_const_constructors
-              title: Text(
-                "Configuraciones",
-                style: const TextStyle(fontSize: 17),
-              ),
-              textColor: const Color(0xffe4f2fb),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
+            // ListTile(
+            //   tileColor: const Color(0xff29859a),
+            //   selectedTileColor: const Color(0xf305718D),
+            //   leading: const Icon(
+            //     Icons.manage_accounts,
+            //     color: Color(0xffe4f2fb),
+            //   ),
+            //   // ignore: prefer_const_constructors
+            //   title: Text(
+            //     "Configuraciones",
+            //     style: const TextStyle(fontSize: 17),
+            //   ),
+            //   textColor: const Color(0xffe4f2fb),
+            //   onTap: () {
+            //     Navigator.pop(context);
+            //   },
+            // ),
             Container(
               height: space,
               //alignment: Alignment.bottomLeft,
@@ -185,7 +185,7 @@ class _viewMenu_clientState extends State<viewMenu_client> {
                 selectedTileColor: const Color(0xf305718D),
                 // ignore: prefer_const_constructors
                 title: Text(
-                  "cerrar sesión",
+                  "Cerrar sesión",
                   textAlign: TextAlign.right,
                   style: const TextStyle(fontSize: 17),
                 ),
@@ -242,7 +242,11 @@ class _viewMenu_clientState extends State<viewMenu_client> {
                           children: [
                             GestureDetector(
                               onTap: (() {
-                                // accion 
+                                // accion
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => pageEditResquest_client(id: id, email: email, name: name, toke: toke)));
                               }),
                               child: Container(
                                 alignment: Alignment.center,

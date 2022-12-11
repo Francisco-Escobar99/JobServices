@@ -66,7 +66,7 @@ class ViewHome extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const viewRegister()));
+                            builder: (context) => const pageRegister()));
                   },
                   icon: const Icon(Icons.arrow_forward_ios),
                   style: ButtonStyle(

@@ -95,7 +95,7 @@ class viewRegister extends StatelessWidget {
                       showDialog(
                           context: context,
                           builder: (context) => const AlertDialog(
-                            title: Text("contrasella desiguales"),
+                            title: Text("contraseña desiguales"),
                           ));
                     }
                   },

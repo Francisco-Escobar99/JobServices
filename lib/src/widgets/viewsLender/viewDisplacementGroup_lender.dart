@@ -4,13 +4,29 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class viewDisplacementGroup_lender extends StatefulWidget {
-  viewDisplacementGroup_lender({Key? key}) : super(key: key);
+  final int id;
+  final String email;
+  final String name;
+  final String toke;
+  viewDisplacementGroup_lender({
+    required this.toke,
+    required this.id,
+    required this.name,
+    required this.email,
+  });
+  //viewDisplacementGroup_lender({required this.toke, required this.id, required this.name, required this.email, });
+  //viewDisplacementGroup_lender({Key? key}) : super(key: key);
 
-  @override
-  State<viewDisplacementGroup_lender> createState() => _viewDisplacementGroup_lenderState();
+   @override
+   State<viewDisplacementGroup_lender> createState() => _viewDisplacementGroup_lenderState(id: id, email: email, name: name, toke: toke);
 }
 
 class _viewDisplacementGroup_lenderState extends State<viewDisplacementGroup_lender> {
+  final int id;
+  final String email;
+  final String name;
+  final String toke;
+  _viewDisplacementGroup_lenderState({required this.toke, required this.id, required this.name, required this.email, });
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,7 +59,7 @@ class _viewDisplacementGroup_lenderState extends State<viewDisplacementGroup_len
                 alignment: Alignment.center,
                 child: Container(
                   margin: const EdgeInsets.only(top: 8),
-                  child: const Text('Dulce Mendoza', style: TextStyle(color: Color(0xff04738b), fontSize: 30, fontWeight: FontWeight.bold)),
+                  child: Text(name, style: TextStyle(color: Color(0xff04738b), fontSize: 30, fontWeight: FontWeight.bold)),
                 ),
               ),
               Container(
@@ -64,6 +80,7 @@ class _viewDisplacementGroup_lenderState extends State<viewDisplacementGroup_len
                 children: [
                   Column(
                     //mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -77,11 +94,11 @@ class _viewDisplacementGroup_lenderState extends State<viewDisplacementGroup_len
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
-                        children: const [
+                        children: [
                           SizedBox(width: 25),
                           Icon(Icons.email, size: 15, color: Color(0xff04738b)),
                           SizedBox(width: 5),
-                          Text('Correo electrónico', style: TextStyle(color: Color(0xff04738b)),),
+                          Text(email, style: TextStyle(color: Color(0xff04738b)),),
                           SizedBox(width: 10)
                         ],
                       ),

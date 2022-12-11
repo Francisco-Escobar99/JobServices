@@ -4,14 +4,14 @@ import 'package:from_end/src/pages/pagesLender/pageAceptRequests_lender.dart';
 import 'package:from_end/src/pages/pagesClient/pageOptions_client.dart';
 import 'package:from_end/src/widgets/viewsLender/viewAceptRequests_lender.dart';
 
-class viewRequests_lender extends StatefulWidget {
-  viewRequests_lender({Key? key}) : super(key: key);
+class viewRequests_client extends StatefulWidget {
+  viewRequests_client({Key? key}) : super(key: key);
 
   @override
-  State<viewRequests_lender> createState() => _viewRequests_lenderState();
+  State<viewRequests_client> createState() => _viewRequests_clientState();
 }
 
-class _viewRequests_lenderState extends State<viewRequests_lender> {
+class _viewRequests_clientState extends State<viewRequests_client> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,8 +61,8 @@ class _viewRequests_lenderState extends State<viewRequests_lender> {
                     ],
                   ),
                   onTap: () {
-                    // Navigator.push(context, MaterialPageRoute(
-                    //   builder: ((context) => viewAceptRequests_lender())));
+                    Navigator.push(context, MaterialPageRoute(
+                      builder: ((context) => viewAceptRequests_lender())));
                   },
                 ),
               )

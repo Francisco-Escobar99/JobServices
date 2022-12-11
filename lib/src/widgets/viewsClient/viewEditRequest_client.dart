@@ -28,21 +28,6 @@ class viewEditRequest_client extends StatelessWidget {
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //crossAxisAlignment: CrossAxisAlignment.start,
-            /* children: [
-              //Padding(padding: EdgeInsets.symmetric(horizontal: 50)),
-              IconButton(
-                icon: const Icon(Icons.arrow_back_ios_new, size: 50),
-                color: Colors.white,
-                alignment: Alignment.topLeft,
-                onPressed: () {},
-              ),
-              Image.asset(
-                'assets/images/logo.png',
-                height: 145,
-                alignment: Alignment.topRight,
-              )
-            ],*/
           ),
           Container(
             padding:
@@ -139,7 +124,7 @@ class viewEditRequest_client extends StatelessWidget {
                     )),
                     shape: MaterialStateProperty.all(RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10)))),
-                child: const Text('Enviar Solicitud'),
+                child: const Text('Guardar cambios'),
               )),
         ],
       ),
