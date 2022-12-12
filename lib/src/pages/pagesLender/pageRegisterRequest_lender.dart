@@ -3,22 +3,20 @@ import 'package:from_end/src/widgets/viewsClient/viewRegisterRequest_client.dart
 import 'package:from_end/src/widgets/viewsLender/viewRegisterRequest_lender.dart';
 // ignore: use_key_in_widget_constructors
 class pageRegisterRequest_lender extends StatefulWidget {
-  final int id;
-  final String email;
-  final String name;
-  final String toke;
-  pageRegisterRequest_lender({required this.toke, required this.id, required this.name, required this.email, });
+  final String idpublicasion;
+  final String idcliente;
+  final int idprestador;
+  pageRegisterRequest_lender({required this.idpublicasion, required this.idcliente, required this.idprestador});
   @override
   // ignore: no_logic_in_create_state
-  State<pageRegisterRequest_lender> createState() => _pageRegisterRequest_lenderState(id: id, email: email, name: name, toke: toke);
+  State<pageRegisterRequest_lender> createState() => _pageRegisterRequest_lenderState(idpublicasion: idpublicasion, idcliente: idcliente, idprestador: idprestador);
 }
 
 class _pageRegisterRequest_lenderState extends State<pageRegisterRequest_lender> {
-  final int id;
-  final String email;
-  final String name;
-  final String toke;
-  _pageRegisterRequest_lenderState({required this.toke, required this.id, required this.name, required this.email, });
+  final String idpublicasion;
+  final String idcliente;
+  final int idprestador;
+  _pageRegisterRequest_lenderState({required this.idpublicasion, required this.idcliente, required this.idprestador});
   @override
   Widget build(BuildContext context) {
     // ignore: prefer_const_constructors
@@ -34,7 +32,7 @@ class _pageRegisterRequest_lenderState extends State<pageRegisterRequest_lender>
         ),
         backgroundColor: const Color(0xff07708c),
       ),
-      body: viewRegisterRequest_lender(id: id, name: name, toke: toke, email:email), //canvas
+      body: viewRegisterRequest_lender(idpublicasion: idpublicasion, idcliente: idcliente, idprestador: idprestador), //canvas
     );
   }
 }

@@ -35,7 +35,7 @@ class viewRegister extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const ViewHome()));
+                            builder: (context) => pageHome()));
                   },
                 ),
                 Image.asset(
@@ -88,9 +88,8 @@ class viewRegister extends StatelessWidget {
                 child: ElevatedButton(
                   onPressed: () {
                     if (password.text == passwordverficar.text) {
-                      
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => viewSelectedRol( name:name.text , password: password.text, email: email.text, categoria: "",)));
+                          MaterialPageRoute(builder: (context) => pageSelectedRol( name:name.text , password: password.text, email: email.text, categoria: "",)));
                     } else {
                       showDialog(
                           context: context,

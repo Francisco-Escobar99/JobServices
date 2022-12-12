@@ -45,7 +45,7 @@ class _viewMenu_clientState extends State<viewMenu_client> {
       required this.name,
       required this.toke});
   getUser() async {
-    http.Response response = await http.get(Uri.parse('http://192.168.0.9:4000/publicasion/verificar'));
+    http.Response response = await http.get(Uri.parse('http://192.168.0.13:4000/publicasion/verificar'));
     data = json.decode(response.body);
     setState(() {
       usersData = data['data'];
@@ -250,10 +250,11 @@ class _viewMenu_clientState extends State<viewMenu_client> {
                             GestureDetector(
                               onTap: (() {
                                 // accion
+                                String dato="${usersData![index]["idpublicasiones"]}";
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => pageEditResquest_client(id: id, email: email, name: name, toke: toke)));
+                                      builder: (context) => pageEditResquest_client( dato: dato, id: id,)));
                               }),
                               child: Container(
                                 alignment: Alignment.center,

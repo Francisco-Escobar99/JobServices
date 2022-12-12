@@ -44,7 +44,7 @@ class _viewMenu_lenderState extends State<viewMenu_lender> {
       required this.name,
       required this.toke});
   getUser() async {
-    http.Response response = await http.get(Uri.parse('http://192.168.0.9:4000/publicasion/verificar'));
+    http.Response response = await http.get(Uri.parse('http://192.168.0.13:4000/publicasion/verificar'));
     data = json.decode(response.body);
     setState(() {
       usersData = data['data'];
@@ -222,11 +222,15 @@ class _viewMenu_lenderState extends State<viewMenu_lender> {
                           children: [
                             GestureDetector(
                               onTap: (() {
+                                String idpublicasion = "${usersData![index]["idpublicasiones"]}";
+                                String idcliente = "${usersData![index]["idcliente"]}";
+                                print(idcliente);
+                                print(idpublicasion);
                                 // accion editar
                                   Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => pageRegisterRequest_lender(email: email, id: id, name: name, toke: toke,)));
+                                      builder: (context) => pageRegisterRequest_lender(idpublicasion: idpublicasion, idcliente: idcliente, idprestador: id,)));
                                 //viewRegisterRequest_lender(toke: toke, id: id, name: name, email: email);
                               }),
                               child: Container(

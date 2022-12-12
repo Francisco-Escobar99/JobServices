@@ -51,7 +51,7 @@ class viewSelectedRol extends StatelessWidget {
                   onPressed: () {
                     addcliente(name, email, password);
                     Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => const viewLogin()));
+                          MaterialPageRoute(builder: (context) => const pageLogin()));
                     // vistas prestatario (cliente)
                   },
                   style: ButtonStyle(
@@ -78,8 +78,10 @@ class viewSelectedRol extends StatelessWidget {
                       style:
                           TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
                   onPressed: () {
-                    // vistas presator de servicio
                     addPrestador(name, email, password, categoria);
+                    Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const pageLogin()));
+                    // vistas presator de servicio
                   },
                   style: ButtonStyle(
                       backgroundColor:

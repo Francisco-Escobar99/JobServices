@@ -17,7 +17,7 @@ class _viewRequests_lenderState extends State<viewRequests_lender> {
   late final Map data;
   List? usersData;
   getUser() async {
-    http.Response response = await http.get(Uri.parse('http://192.168.0.9:4000/publicasion/verificar'));
+    http.Response response = await http.get(Uri.parse('http://192.168.0.13:4000/publicasion/verificar'));
     data = json.decode(response.body);
     setState(() {
       usersData = data['data'];

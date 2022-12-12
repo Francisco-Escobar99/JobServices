@@ -3,39 +3,35 @@ import 'package:from_end/src/baken/client_connection.dart';
 
 // ignore: camel_case_types
 class viewRegisterRequest_lender extends StatefulWidget {
-  final int id;
-  final String email;
-  final String name;
-  final String toke;
+  final String idpublicasion;
+  final String idcliente;
+  final int idprestador;
   const viewRegisterRequest_lender(
       {super.key,
-      required this.id,
-      required this.email,
-      required this.name,
-      required this.toke});
+      required this.idpublicasion,
+      required this.idcliente,
+      required this.idprestador,
+      });
  
   @override
   State<viewRegisterRequest_lender> createState() =>
-    _viewRegisterRequest_lenderState(id: id, email: email, name: name, toke: toke);
+    _viewRegisterRequest_lenderState(idpublicasion: idpublicasion, idcliente: idcliente, idprestador: idprestador);
 }
 
 class _viewRegisterRequest_lenderState extends State<viewRegisterRequest_lender> {
-  final int id;
-  final String email;
-  final String name;
-  final String toke;
+  final String idpublicasion;
+  final String idcliente;
+  final int idprestador;
   _viewRegisterRequest_lenderState(
-      {required this.id,
-      required this.email,
-      required this.name,
-      required this.toke});
+    {required this.idpublicasion,
+      required this.idcliente,
+      required this.idprestador,
+    });
   @override
   Widget build(BuildContext context) {
     final materiales = TextEditingController();
     final precio = TextEditingController();
     final descpcion = TextEditingController();
-    final idpublicacion = TextEditingController();
-    final idprestador = TextEditingController();
     return SizedBox(
       height: double.infinity,
       width: double.infinity,
@@ -100,7 +96,7 @@ class _viewRegisterRequest_lenderState extends State<viewRegisterRequest_lender>
                   // print( direccion.text);
                   // addpubli(titulo.text, descpcion.text, cargo.text, id,
                   //     comentario.text, direccion.text, name);
-                  //addcotizacion(materiales.text, descpcion.text, precio.text);                      AGREGAR COTIZACION
+                  addcotizacion(materiales.text, descpcion.text, precio.text, idpublicasion, idprestador, idcliente); 
                 },
                 style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all(Colors.white),

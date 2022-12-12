@@ -4,15 +4,8 @@ import 'package:from_end/src/baken/client_connection.dart';
 // ignore: camel_case_types
 class viewEditRequest_client extends StatelessWidget {
   final int id;
-  final String email;
-  final String name;
-  final String toke;
-  viewEditRequest_client({
-    required this.toke,
-    required this.id,
-    required this.name,
-    required this.email,
-  });
+  final String dato;
+  viewEditRequest_client({super.key, required this.id, required this.dato});
 
   @override
   Widget build(BuildContext context) {
@@ -104,15 +97,9 @@ class viewEditRequest_client extends StatelessWidget {
               padding: const EdgeInsets.only(right: 30, left: 30, top: 40),
               child: ElevatedButton(
                 onPressed: () {
-                  print( name);
-                  print( titulo.text);
-                  print( descpcion.text);
-                  print( cargo.text);
-                  print( id);
-                  print( comentario.text);
-                  print( direccion.text);
-                  addpubli(titulo.text, descpcion.text, cargo.text, id,
-                      comentario.text, direccion.text, name);
+                  edCliente(dato, titulo.text, descpcion.text, cargo.text, id,
+                      comentario.text, direccion.text, cargo.text);
+                  //Navigator.pop(context);
                 },
                 style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all(Colors.white),
