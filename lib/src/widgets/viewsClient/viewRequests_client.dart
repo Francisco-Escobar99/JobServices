@@ -17,7 +17,7 @@ class _viewRequests_clientState extends State<viewRequests_client> {
   late final Map data;
   List? usersData;
   getUser() async {
-    http.Response response = await http.get(Uri.parse('http://192.168.0.13:4000/publicasion/verificar'));
+    http.Response response = await http.get(Uri.parse('http://192.168.0.13:3002/cotizacion/validad'));
     data = json.decode(response.body);
     setState(() {
       usersData = data['data'];
@@ -60,7 +60,7 @@ class _viewRequests_clientState extends State<viewRequests_client> {
                   Container(
                     margin: EdgeInsets.symmetric(horizontal: 5, vertical: 10),
                     alignment: Alignment.center,
-                    height: 140,
+                    height: 100,
                     width: 365,
                     decoration: BoxDecoration(
                       border: Border.all(color: Color(0xff29859a)),
@@ -69,13 +69,9 @@ class _viewRequests_clientState extends State<viewRequests_client> {
                     child: Column(
                       children: [
                         SizedBox(height: 2),
-                        Text('Solicitud Cotización:'),
-                        Text("Titulo: " "${usersData![index]["titulo"]}", style: TextStyle(color: Color(0xff29859a), fontWeight: FontWeight.bold)),
-                        Text("Cargo: " "${usersData![index]["cargo"]}", style: TextStyle(color: Color(0xff29859a))),
-                        Text("Nombre: " "${usersData![index]["nombreClie"]}", style: TextStyle(color: Color(0xff29859a))),
-                        Text("Dirección: " "${usersData![index]["direccion"]}", style: TextStyle(color: Color(0xff29859a))),
-                        Text("Descripción: " "${usersData![index]["descripcion"]}", style: TextStyle(color: Color(0xff29859a))),
-                        Text("Comentarios: " "${usersData![index]["comentarios"]}", style: TextStyle(color: Color(0xff29859a))),
+                        Text("Materiales: " "${usersData![index]["materiales"]}", style: TextStyle(color: Color(0xff29859a), fontWeight: FontWeight.bold)),
+                        Text("Descripcion: " "${usersData![index]["descripcion"]}", style: TextStyle(color: Color(0xff29859a))),
+                        Text("Precio: " "${usersData![index]["precio"]}", style: TextStyle(color: Color(0xff29859a))),
                         // Container(
                         //   margin: const EdgeInsets.symmetric(vertical: 3, horizontal: 30),
                         //   color:  const Color(0xff04738b),

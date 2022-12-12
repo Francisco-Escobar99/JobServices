@@ -179,7 +179,7 @@ Future addcotizacion(materiales, descripcion, precio, idpublicasion, idprestador
     'precio': precio,
     'idpublicasio': idpublicasion,
     'idprestador': idprestador,
-    'idcliente': idcliente,
+    'idcliente': idcliente
   };
   String url = date;
   final http.Response response = await http.post(
